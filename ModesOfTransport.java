@@ -1,28 +1,26 @@
 public class ModesOfTransport{
-    protected double modeName;
+    protected String modeName;
     protected double emissionPerMile;
     protected double maxDistanceCovered;
     protected double minDistanceCovered;
 
-    ModesOfTransport(){};
+    public ModesOfTransport(){};
 
     
-    public ModesOfTransport(double modeName, double emissionPerMile,double maxDistanceCovered,double minDistanceCovered)
+    public ModesOfTransport(String modeName, double emissionPerMile,double maxDistanceCovered,double minDistanceCovered)
     {
         this.modeName=modeName;
         this.emissionPerMile=emissionPerMile;
+        this.maxDistanceCovered=maxDistanceCovered;
+        this.minDistanceCovered=minDistanceCovered;
     }
 
-
-
-
-
-    public double getModeName() {
+    public String getModeName() {
         return modeName;
     }
 
 
-    public void setModeName(double modeName) {
+    public void setModeName(String modeName) {
         this.modeName = modeName;
     }
 
@@ -59,6 +57,10 @@ public class ModesOfTransport{
     }
 
    
+    public double computeEmission(double distance, double emissionPerMile)
+    {
+        return distance*emissionPerMile;
+    }
 
 
 }
