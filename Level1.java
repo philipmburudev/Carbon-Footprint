@@ -1,4 +1,5 @@
-public class Level1 {
+public class Level1 extends ModesOfTransport{
+    
     
 
     
