@@ -1,5 +1,7 @@
 import java.util.Scanner;
 
+import javax.lang.model.util.Elements.Origin;
+
 public class FootprintTracker {
 
     public FootprintTracker(){}
@@ -13,10 +15,17 @@ public class FootprintTracker {
     private String destination;
     private double distanceCovered;
     
+
     public static void main(String args[]){
         Scanner userInput= new Scanner(System.in);
+        System.out.println("Hello! This is Footprint Forward, here to help you implement sustainable practices in your daily life.");
+        System.out.println("To start, you will have to input your origin,destination, and mode of transport you intend to use\n");
 
-        
+        System.out.println("Enter your origin here:");
+   
+        System.out.println("Enter your destination here:");
+        System.out.println("Enter your mode of transport you intend to use here:");
+
         Level1 bicycle = new Level1("Bicycle",0);
         Level1 walking = new Level1("Walking",0);
         Level1 scooter = new Level1("Scooter",0);
