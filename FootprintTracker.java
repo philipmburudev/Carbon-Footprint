@@ -12,8 +12,7 @@ public class FootprintTracker {
     private String destination;
     private double distance;
     
-    public static void main(String args[])
-    {
+    public static void main(String args[]){
         Scanner userInput= new Scanner(System.in);
 
         
@@ -25,7 +24,6 @@ public class FootprintTracker {
                                                                        + bicycle.getModeName()+"\n"
                                                                        + walking.getModeName()
                                                                        );
-        //System.out.println("The modes of transport in level 1 are: " + Level1);
 
         Level2 motorbike = new Level2("Motorbike",0.18);
         Level2 bus = new Level2("Bus",0.29);
@@ -46,6 +44,21 @@ public class FootprintTracker {
                                                                        );
 
         System.out.println();
+
+        //user should input their origin and destination
+        System.out.println("Enter your origin location: ");
+        String origin = userInput.nextLine();
+        System.out.println();
+
+        System.out.println("Enter your destination location: ");
+        String destination = userInput.nextLine();
+        System.out.println();
+
+
+        //ask the user the mode of tranport they want to use
+        System.out.println("What mode of transport do you want to use? ");
+
+        String modeName = userInput.nextLine();
 
     }
 
