@@ -1,5 +1,7 @@
 import java.util.Scanner;
 
+import javax.lang.model.util.Elements.Origin;
+
 public class FootprintTracker {
 
     public FootprintTracker(){}
@@ -42,25 +44,52 @@ public class FootprintTracker {
                                                                        + ship.getModeName() +"\n"
                                                                        + airplane.getModeName()
                                                                        );
-
-        System.out.println();
-
-        //user should input their origin and destination
-        System.out.println("Enter your origin location: ");
-        String origin = userInput.nextLine();
-        System.out.println();
-
-        System.out.println("Enter your destination location: ");
-        String destination = userInput.nextLine();
         System.out.println();
 
 
-        //ask the user the mode of tranport they want to use
-        System.out.println("What mode of transport do you want to use? ");
 
-        String modeName = userInput.nextLine();
+        //asking user to enter their origin location
+        String origin;
+        do {
+            System.out.print("Please enter your origin: ");
+            origin = userInput.nextLine();
+            
+            if (origin.matches("\\d+")) {
+                System.out.println("Invalid input! Please enter a valid location.");
+            }
+        } while (origin.matches("\\d+"));
+        System.out.println();
+
+
+
+        //asking user to enter their destitnation location
+        String destination;
+        do {
+            System.out.print("Enter a string: ");
+            destination = userInput.nextLine();
+            
+            if (destination.matches("\\d+")) {
+                System.out.println("Invalid input! Please enter a valid location.");
+            }
+        } while (destination.matches("\\d+"));
+        System.out.println();
+
+
+
+        //asking user to enter the mode of transport they want to use
+        String modeName;
+        do {
+            System.out.print("Enter a string: ");
+            modeName = userInput.nextLine();
+            
+            if (modeName.matches("\\d+")) {
+                System.out.println("Invalid mode of transport. Please enter a valid mode of transport.");
+            }
+        } while (modeName.matches("\\d+"));
 
     }
 
-
 }
+
+
+        
