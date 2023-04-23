@@ -86,6 +86,7 @@ public class FootprintTracker {
             }
         } while (destination.matches("\\d+"));
         System.out.println();
+        
 
 
 
