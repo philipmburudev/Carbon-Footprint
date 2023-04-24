@@ -12,7 +12,7 @@ public class ModesOfTransport{
 
 
     //constructor to initialize the variables
-    public ModesOfTransport(String modeName, double emissionPerMile,double maxDistanceCovered,double minDistanceCovered)
+    public ModesOfTransport(String modeName, double emissionPerMile,double minDistanceCovered,double maxDistanceCovered)
     {
         this.modeName=modeName;
         this.emissionPerMile=emissionPerMile;
