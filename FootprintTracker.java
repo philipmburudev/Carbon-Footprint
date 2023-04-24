@@ -19,9 +19,9 @@ public class FootprintTracker {
  
     //main method
     public static void main(String args[]){
-        try
+    try
     {
-        Scanner inputStream = new Scanner (new File("C:\\Users\\User\\Desktop\\Carbon-Footprint\\Ghana.csv"));         
+        Scanner inputStream = new Scanner (new File("Ghana.csv"));         
         
         String line = inputStream.nextLine();
         String[] locationName= new String[MAXIMUMUM_NUMBER_OF_LOCATIONS];
@@ -43,14 +43,6 @@ public class FootprintTracker {
         {
             System.out.println(locationLatitude[i]);
         }
-        
-    }
-    catch (FileNotFoundException e)
-    {
-        System.out.println("Cannot find file");
-    }
-
-
         Scanner userInput= new Scanner(System.in);
         System.out.println("\n" + "Hello! This is Footprint Forward, here to help you implement sustainable practices in your daily life.");
         System.out.println("To start, you will have to input your origin, destination, and mode of transport you intend to use.\n");
@@ -92,32 +84,21 @@ public class FootprintTracker {
 
 
         //asking user to enter their origin location
-            String origin;
-            System.out.println("\n" + "Lets get started. " +  "\n");
-            do 
+        String origin;
+        System.out.println("\n" + "Lets get started. " +  "\n");
+        do 
+        {
+            System.out.print("Please enter your origin: ");
+            origin = userInput.nextLine();
+            
+            if (origin.matches("\\d+")) 
             {
-                System.out.print("Please enter your origin: ");
-                origin = userInput.nextLine();
-                
-                if (origin.matches("\\d+")) 
-                {
-                    System.out.println("Invalid input! Please enter a valid location.");
-                }
-            } while (origin.matches("\\d+"));
-            System.out.println();
+                System.out.println("Invalid input! Please enter a valid location.");
+            }
+        } while (origin.matches("\\d+"));
+        System.out.println();
 
 
-            //asking user to enter their destitnation location
-            String destination;
-            do {
-                System.out.print("Enter a string: ");
-                destination = userInput.nextLine();
-                
-                if (destination.matches("\\d+")) {
-                    System.out.println("Invalid input! Please enter a valid location.");
-                }
-            } while (destination.matches("\\d+"));
-            System.out.println();
 
         //asking user to enter their destitnation location
         String destination;
@@ -128,21 +109,37 @@ public class FootprintTracker {
             if (destination.matches("\\d+")) {
                 System.out.println("Invalid input! Please enter a valid location.");
             }
+            for(int i=0;i<locationsStringType.length;i++){
+                
+            }
         } while (destination.matches("\\d+"));
         System.out.println();
         
 
 
-            //asking user to enter the mode of transport they want to use
-            String modeName;
-            do {
-                System.out.print("Enter a string: ");
-                modeName = userInput.nextLine();
-                
-                if (modeName.matches("\\d+")) {
-                    System.out.println("Invalid mode of transport. Please enter a valid mode of transport.");
-                }
-            } while (modeName.matches("\\d+"));
+        //asking user to enter the mode of transport they want to use
+        String modeName;
+        do {
+            System.out.print("Enter a string: ");
+            modeName = userInput.nextLine();
+            
+            if (modeName.matches("\\d+")) {
+                System.out.println("Invalid mode of transport. Please enter a valid mode of transport.");
+            }
+        } while (modeName.matches("\\d+"));
+
+        // Finding the distance between two locations
+        String distanceCovered;
+        
+    }
+    catch (FileNotFoundException e)
+    {
+        System.out.println("Cannot find file");
+    }
+
+
+        
+        
 }
 
 }

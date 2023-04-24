@@ -9,7 +9,11 @@
             "name": "ShortestDistance",
             "request": "launch",
             "mainClass": "ShortestDistance",
+<<<<<<< HEAD
+            "projectName": "Carbon-Footprint-1_c9b4b937"
+=======
             "projectName": "Carbon-Footprint_ad8e7a57"
+>>>>>>> 3b6dc95e29686003a39a81aa23318ba92994f186
         },
         {
             "type": "java",
