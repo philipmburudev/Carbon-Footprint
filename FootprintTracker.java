@@ -19,9 +19,9 @@ public class FootprintTracker {
  
     //main method
     public static void main(String args[]){
-        try
+    try
     {
-        Scanner inputStream = new Scanner (new File("C:\\Users\\User\\Desktop\\Carbon-Footprint\\Ghana.csv"));         
+        Scanner inputStream = new Scanner (new File("Ghana.csv"));         
         
         String line = inputStream.nextLine();
         String[] locationName= new String[MAXIMUMUM_NUMBER_OF_LOCATIONS];
