@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "ShortestDistance",
+            "request": "launch",
+            "mainClass": "ShortestDistance",
+            "projectName": "Carbon-Footprint_ad8e7a57"
+        },
+        {
+            "type": "java",
             "name": "Current File",
             "request": "launch",
             "mainClass": "${file}"
