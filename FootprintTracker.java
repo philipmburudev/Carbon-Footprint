@@ -48,8 +48,9 @@ public class FootprintTracker {
     catch (FileNotFoundException e)
     {
         System.out.println("Cannot find file");
-    }}
-    
+    }
+
+
         Scanner userInput= new Scanner(System.in);
         System.out.println("\n" + "Hello! This is Footprint Forward, here to help you implement sustainable practices in your daily life.");
         System.out.println("To start, you will have to input your origin, destination, and mode of transport you intend to use.\n");
@@ -61,6 +62,7 @@ public class FootprintTracker {
         Level1 walking = new Level1("Walking",0);
         Level1 scooter = new Level1("Scooter",0);
         System.out.println();
+
         System.out.println("The modes of transport in level 1 are: \n" + scooter.getModeName()+"\n"
                                                                        + bicycle.getModeName()+"\n"
                                                                        + walking.getModeName()
