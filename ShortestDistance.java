@@ -16,7 +16,7 @@ public class ShortestDistance
 
     try
     {
-        Scanner inputStream = new Scanner (new File("Ghana.csv"));         
+        Scanner inputStream = new Scanner (new File("C:\\Users\\User\\Desktop\\Carbon-Footprint\\Ghana.csv"));         
         
         String line = inputStream.nextLine();
         double[] locationName= new double[MAXIMUMUM_NUMBER_OF_LOCATIONS];
@@ -32,6 +32,11 @@ public class ShortestDistance
             locationLongitude[numberOfLocationss]=Double.parseDouble(locationsStringType[1]) ;
             locationLatitude[numberOfLocationss]=Double.parseDouble(locationsStringType[2]) ;
             numberOfLocationss++;                
+        }
+
+        for (int i=0;i<MAXIMUMUM_NUMBER_OF_LOCATIONS;i++)
+        {
+            System.out.println(i);
         }
         
     }
