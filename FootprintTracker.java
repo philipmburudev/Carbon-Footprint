@@ -110,9 +110,6 @@ public class FootprintTracker {
             if (destination.matches("\\d+")) {
                 System.out.println("Invalid input! Please enter a valid location.");
             }
-            for(int i=0;i<locationsStringType.length;i++){
-                
-            }
         } while (destination.matches("\\d+"));
         System.out.println();
         
@@ -138,7 +135,9 @@ public class FootprintTracker {
         System.out.println("Cannot find file");
     }
 
-
+    for(int i=0;i<20;i++){
+        
+    }
         
         
 }
