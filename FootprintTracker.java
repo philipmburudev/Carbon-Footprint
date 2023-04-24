@@ -9,16 +9,7 @@ public class FootprintTracker {
     private String recommendedModeOfTransport;
     private double totalActualEmissions; 
     private double totalRecommendedEmissions;
-    private String currentModeOfTransport;
-    private String location;
-    private String origin;
-    private String destination;
-    private double distanceCovered;
-    
-
-
-
-
+ 
     //main method
     public static void main(String args[]){
         Scanner userInput= new Scanner(System.in);
@@ -61,8 +52,6 @@ public class FootprintTracker {
 
 
         //asking user to enter their origin location
-        try
-        {
             String origin;
             System.out.println("\n" + "Lets get started. " +  "\n");
             do 
@@ -90,6 +79,19 @@ public class FootprintTracker {
             } while (destination.matches("\\d+"));
             System.out.println();
 
+        //asking user to enter their destitnation location
+        String destination;
+        do {
+            System.out.print("Enter a string: ");
+            destination = userInput.nextLine();
+            
+            if (destination.matches("\\d+")) {
+                System.out.println("Invalid input! Please enter a valid location.");
+            }
+        } while (destination.matches("\\d+"));
+        System.out.println();
+        
+
 
             //asking user to enter the mode of transport they want to use
             String modeName;
@@ -101,10 +103,6 @@ public class FootprintTracker {
                     System.out.println("Invalid mode of transport. Please enter a valid mode of transport.");
                 }
             } while (modeName.matches("\\d+"));
-        }
-        catch(NumberFormatException a){
-            System.out.println("This input is invalid. It should be a string.");
-        }
 }
 
 }
