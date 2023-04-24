@@ -9,16 +9,7 @@ public class FootprintTracker {
     private String recommendedModeOfTransport;
     private double totalActualEmissions; 
     private double totalRecommendedEmissions;
-    private String currentModeOfTransport;
-    private String location;
-    private String origin;
-    private String destination;
-    private double distanceCovered;
-    
-
-
-
-
+ 
     //main method
     public static void main(String args[]){
         Scanner userInput= new Scanner(System.in);
