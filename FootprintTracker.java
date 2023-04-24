@@ -16,6 +16,7 @@ public class FootprintTracker {
     private String recommendedModeOfTransport;
     private double totalActualEmissions; 
     private double totalRecommendedEmissions;
+    private String[] locationStringType;
  
     //main method
     public static void main(String args[]){
