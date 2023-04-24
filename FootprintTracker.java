@@ -16,7 +16,6 @@ public class FootprintTracker {
     private String recommendedModeOfTransport;
     private double totalActualEmissions; 
     private double totalRecommendedEmissions;
-    private String[] locationStringType;
  
     //main method
     public static void main(String args[]){
@@ -127,7 +126,11 @@ public class FootprintTracker {
         } while (modeName.matches("\\d+"));
 
         // Finding the distance between two locations
-        String distanceCovered;
+        for(int i=0;i<20;i++){
+            if(origin.equals(locationName[i])){
+                
+            }
+        }
         
     }
     catch (FileNotFoundException e)
@@ -135,9 +138,9 @@ public class FootprintTracker {
         System.out.println("Cannot find file");
     }
 
-    for(int i=0;i<20;i++){
-        
-    }
+
+
+    
         
         
 }
