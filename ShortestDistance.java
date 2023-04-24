@@ -8,15 +8,15 @@ import java.lang.StringBuilder;
 
 public class ShortestDistance 
 {
-    MAXIMUMUM_NUMBER_OF_POINTS=50;
+    static final int MAXIMUMUM_NUMBER_OF_LOCATIONS=20;
 
     try
     {
         Scanner inputStream = new Scanner (new File("Ghana.csv"));         
         
         String line = inputStream.nextLine();
-        double[] xCoordinates= new double[MAXIMUMUM_NUMBER_OF_POINTS];
-        double[] yCoordinates= new double[MAXIMUMUM_NUMBER_OF_POINTS];
+        double[] xCoordinates= new double[MAXIMUMUM_NUMBER_OF_LOCATIONS];
+        double[] yCoordinates= new double[MAXIMUMUM_NUMBER_OF_LOCATIONS];
 
         int numberOfPoints=0;
         while (inputStream.hasNextLine())
