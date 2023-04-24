@@ -15,8 +15,9 @@ public class ShortestDistance
         Scanner inputStream = new Scanner (new File("Ghana.csv"));         
         
         String line = inputStream.nextLine();
-        double[] xCoordinates= new double[MAXIMUMUM_NUMBER_OF_LOCATIONS];
-        double[] yCoordinates= new double[MAXIMUMUM_NUMBER_OF_LOCATIONS];
+        double[] locationName= new double[MAXIMUMUM_NUMBER_OF_LOCATIONS];
+        double[] locationLongitude= new double[MAXIMUMUM_NUMBER_OF_LOCATIONS];
+        double[] locationLatitude= new double[MAXIMUMUM_NUMBER_OF_LOCATIONS];
 
         int numberOfPoints=0;
         while (inputStream.hasNextLine())
