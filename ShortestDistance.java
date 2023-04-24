@@ -8,10 +8,11 @@ import java.lang.StringBuilder;
 
 public class ShortestDistance 
 {
+    static final int MAXIMUMUM_NUMBER_OF_LOCATIONS=20;
+
     public static void main(String[] args)
 
     {
-    static final int MAXIMUMUM_NUMBER_OF_LOCATIONS=20;
 
     try
     {
