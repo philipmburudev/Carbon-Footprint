@@ -8,6 +8,9 @@ import java.lang.StringBuilder;
 
 public class ShortestDistance 
 {
+    public static void main(String[] args)
+
+    {
     static final int MAXIMUMUM_NUMBER_OF_LOCATIONS=20;
 
     try
@@ -19,32 +22,20 @@ public class ShortestDistance
         double[] locationLongitude= new double[MAXIMUMUM_NUMBER_OF_LOCATIONS];
         double[] locationLatitude= new double[MAXIMUMUM_NUMBER_OF_LOCATIONS];
 
-        int numberOfPoints=0;
+        int numberOfLocationss=0;
         while (inputStream.hasNextLine())
         {
             line = inputStream.nextLine();
-            String[] pointsStringType = line.split(",");
-            xCoordinates[numberOfPoints]=Double.parseDouble(pointsStringType[0]) ;
-            yCoordinates[numberOfPoints]=Double.parseDouble(pointsStringType[1]) ;
-            numberOfPoints++;                
+            String[] locationsStringType = line.split(",");
+            locationName[numberOfLocationss]=Double.parseDouble(locationsStringType[0]) ;
+            locationLongitude[numberOfLocationss]=Double.parseDouble(locationsStringType[1]) ;
+            locationLatitude[numberOfLocationss]=Double.parseDouble(locationsStringType[2]) ;
+            numberOfLocationss++;                
         }
         
-        for (int n = 0; n < numberOfPoints; n++) 
-        {
-            for (int m = 0; m < numberOfPoints-1 - n; m++) {
-                if (xCoordinates[m]>xCoordinates[m + 1]) {
-                    double swapString = xCoordinates[m];
-                    xCoordinates[m] = xCoordinates[m + 1];
-                    xCoordinates[m + 1] = swapString;
-                    double swapInt = yCoordinates[m];
-                    yCoordinates[m] = yCoordinates[m + 1];
-                    yCoordinates[m + 1] = swapInt;
-                }
-            }
-        }
     }
     catch (FileNotFoundException e)
     {
         System.out.println("Cannot find file");
-    }
+    }}
 }
