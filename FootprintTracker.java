@@ -116,6 +116,7 @@ public class FootprintTracker {
         } while (destination.matches("\\d+"));
         System.out.println();
         
+        System.out.println();
 
 
         //asking user to enter the mode of transport they want to use
