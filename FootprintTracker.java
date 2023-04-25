@@ -6,8 +6,7 @@ import java.io.IOException;
 import java.io.File;
 import java.lang.StringBuilder;
 import javax.lang.model.util.Elements.Origin;
-import java.lang.Math;
-
+3
 public class FootprintTracker {
 
     static final int MAXIMUMUM_NUMBER_OF_LOCATIONS=20;
