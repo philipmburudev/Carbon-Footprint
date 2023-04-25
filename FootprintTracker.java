@@ -89,6 +89,7 @@ public class FootprintTracker {
                 System.out.println("Invalid input! Please enter a valid location.");
                 origin = userInput.nextLine();
             }
+
         } while (origin.matches("\\d+"));
         System.out.println();
 
