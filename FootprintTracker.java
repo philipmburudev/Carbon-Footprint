@@ -41,11 +41,6 @@ public class FootprintTracker {
             numberOfLocationss++;                
         }
 
-        for (int i=0;i<MAXIMUMUM_NUMBER_OF_LOCATIONS;i++)
-        {
-            System.out.println(locationLatitude[i]);
-            System.out.println(locationName[i]);
-        }
         Scanner userInput= new Scanner(System.in);
         System.out.println("\n" + "Hello! This is Footprint Forward, here to help you implement sustainable practices in your daily life.");
         System.out.println("To start, you will have to input your origin, destination, and mode of transport you intend to use.\n");
