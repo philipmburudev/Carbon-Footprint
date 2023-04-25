@@ -85,7 +85,7 @@ public class ModesOfTransport{
         return Math.round(distance*this.emissionPerMile);
     }
 
-    public ModesOfTransport lowestEmissionsCalculator(ModesOfTransport mode1,ModesOfTransport mode2, double distanceCovered)
+    public ModesOfTransport findLowestEmitter(ModesOfTransport mode1,ModesOfTransport mode2, double distanceCovered)
     {
         if(this.computeEmission(distanceCovered)<mode1.computeEmission(distanceCovered) && this.computeEmission(distanceCovered)<mode2.computeEmission(distanceCovered))
         {

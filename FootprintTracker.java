@@ -88,6 +88,8 @@ public class FootprintTracker {
         } while (origin.matches("\\d+"));
         System.out.println();
 
+
+
         //asking user to enter their destitnation location
         String destination;
         do {
@@ -103,6 +105,8 @@ public class FootprintTracker {
             }
         } while (destination.matches("\\d+"));
         System.out.println();
+        
+
         
         //asking user to enter the mode of transport they want to use
         String modeName;
@@ -122,7 +126,7 @@ public class FootprintTracker {
         for(int i=0;i<locationName.length;i++)
         {
             for(int j=0;j<locationName.length;j++){
-                if(origin.equals(locationName[i]) && destination.equals(locationName[j]))
+                if(origin.equalsIgnoreCase(locationName[i]) && destination.equalsIgnoreCase(locationName[j]))
                 {
                     longitude1 = locationLongitude[i];
                     latitude1 = locationLatitude[i];

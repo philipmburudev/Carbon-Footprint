@@ -24,7 +24,7 @@ public class ShortestDistance
         String modeName="car";
 
         double distance= 211;
-        
+
         ModesOfTransport recommendedModeOfTransport;
         ModesOfTransport intendedModeOfTransport;
 
@@ -78,11 +78,11 @@ public class ShortestDistance
 
         if (distance>0 && distance<=5)
         {
-            recommendedModeOfTransport=walking.lowestEmissionsCalculator(scooter, bicycle, distance);
+            recommendedModeOfTransport=walking.findLowestEmitter(scooter, bicycle, distance);
 
             if (recommendedModeOfTransport.getModeName().equalsIgnoreCase(modeName))
             {
-                System.out.println("Well done! The mode of transport("+ recommendedModeOfTransport.getModeName()+") you intend to use emits the lease greenhouse gases.");
+                System.out.println("Well done! The mode of transport("+ recommendedModeOfTransport.getModeName()+") you intend to use emits the least greenhouse gases.");
             }
             else
             {
@@ -95,7 +95,7 @@ public class ShortestDistance
         }
         else if (distance>5 && distance<=200)
         {
-            recommendedModeOfTransport=motorbike.lowestEmissionsCalculator(car, bus, distance);
+            recommendedModeOfTransport=motorbike.findLowestEmitter(car, bus, distance);
 
             if (recommendedModeOfTransport.getModeName().equalsIgnoreCase(modeName))
             {
@@ -126,7 +126,7 @@ public class ShortestDistance
         }
         else if (distance>200 && distance<=1250)
         {
-            recommendedModeOfTransport=train.lowestEmissionsCalculator(ship, airplane, distance);
+            recommendedModeOfTransport=train.findLowestEmitter(ship, airplane, distance);
 
             if (recommendedModeOfTransport.getModeName().equalsIgnoreCase(modeName))
             {
