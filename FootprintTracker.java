@@ -89,9 +89,10 @@ public class FootprintTracker {
             System.out.print("Please enter your origin: ");
             origin = userInput.nextLine();
             
-            if (origin.matches("\\d+")) 
+            while(origin.matches("\\d+")) 
             {
                 System.out.println("Invalid input! Please enter a valid location.");
+                origin = userInput.nextLine();
             }
         } while (origin.matches("\\d+"));
         System.out.println();
@@ -101,9 +102,13 @@ public class FootprintTracker {
         do {
             System.out.print("Enter your destination: ");
             destination = userInput.nextLine();
-            
+            while(destination.equals(origin)){
+                System.out.println("This is your origin and cannot be your destination\nTry again with a different location");
+                destination = userInput.nextLine();
+            }
             if (destination.matches("\\d+")) {
                 System.out.println("Invalid input! Please enter a valid location.");
+                destination = userInput.nextLine();
             }
         } while (destination.matches("\\d+"));
         System.out.println();
@@ -119,16 +124,19 @@ public class FootprintTracker {
             }
         } while (modeName.matches("\\d+"));
 
-        // Finding the distance between two locations
+
+
+        // Finding the distance between two locations using their longitudes and latitudes
         double longitude1,longitude2,latitude1,latitude2,distance,a;
         for(int i=0;i<locationName.length;i++)
         {
-            if(origin.equals(locationName[i]) && destination.equals(locationName[i]) && !destination.equals(origin))
+            for(int j=0;j<locationName.length;j++)
+            if(origin.equals(locationName[i]) && destination.equals(locationName[j]) && !destination.equals(origin))
             {
                 longitude1 = locationLongitude[i];
                 latitude1 = locationLatitude[i];
-                longitude2 = locationLongitude[i];
-                latitude2 = locationLatitude[i];
+                longitude2 = locationLongitude[j];
+                latitude2 = locationLatitude[j];
                 a = (Math.sin((Math.toRadians(latitude2)-Math.toRadians(latitude1))/2)*Math.sin((Math.toRadians(latitude2)-Math.toRadians(latitude1))/2))+(Math.cos(Math.toRadians(latitude2))*Math.sin((Math.toRadians(latitude2)-Math.toRadians(latitude1))/2)*Math.sin((Math.toRadians(longitude2)-Math.toRadians(longitude1))/2)*Math.sin((Math.toRadians(longitude2)-Math.toRadians(longitude1))/2));
             distance = a*Math.cos((Math.sin(Math.toRadians(latitude1))*Math.sin(Math.toRadians(latitude2)))+(Math.cos(Math.toRadians(latitude1))*Math.cos(Math.toRadians(latitude2))*Math.cos(Math.toRadians(longitude2-longitude1))))*6371;
             }
@@ -136,19 +144,7 @@ public class FootprintTracker {
                 System.out.println("Location cannot be found");
             }
         }
-
-
-        // if (distance>0 && distance<=5)
-        // {
-        //     if(walking.computeEmission(distance)<10)
-        //     {
-        //         System.out.println();
-        //     }
-        // }
-
-        userInput.close(); //om
-
-
+    userInput.close(); 
     }
     catch (FileNotFoundException e)
     {
