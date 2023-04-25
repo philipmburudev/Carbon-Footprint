@@ -18,8 +18,8 @@ public class ShortestDistance
         Level2 car = new Level2("Car",0.17);
  
         Level3 train = new Level3("Train",0.17);
-        Level3 ship = new Level3("Ship",0.025);
-        Level3 airplane = new Level3("Airplane",0.32);
+        Level3 ship = new Level3("Ship",193.066);
+        Level3 airplane = new Level3("Airplane",0.42);
 
         String modeName="car";
 
@@ -109,6 +109,7 @@ public class ShortestDistance
                         percentageOfEmissionsSaved= Math.round(Math.abs(((intendedModeOfTransport.computeEmission(distance)-recommendedModeOfTransport.computeEmission(distance))/intendedModeOfTransport.computeEmission(distance))*100));
                         actualEmissionsList.add(intendedModeOfTransport.computeEmission(distance));
                         recommendedEmissionsList.add(recommendedModeOfTransport.computeEmission(distance));
+                        System.out.println(recommendedModeOfTransport.computeEmission(distance)+"\n"+intendedModeOfTransport.computeEmission(distance));
                         System.out.println("The mode of transport we recommend you use is "+ recommendedModeOfTransport.getModeName());
                         System.out.println("With this mode of transport "+recommendedModeOfTransport.getModeName()+", you will reduce carbon emissions by " +percentageOfEmissionsSaved + " %");
 
