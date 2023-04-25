@@ -209,8 +209,8 @@ public class FootprintTracker {
                     actualEmissionsList.add(intendedModeOfTransport.computeEmission(distance));
                     recommendedEmissionsList.add(recommendedModeOfTransport.computeEmission(distance));
                     System.out.println("The mode of transport we recommend you use is "+ recommendedModeOfTransport.getModeName());
-
-                    System.out.println("\n" + "With this mode of transport"+recommendedModeOfTransport.getModeName()+", you will reduce carbon emissions by " +percentageOfEmissionsSaved + " %");
+                    System.out.println();
+                    System.out.println("With this mode of transport"+recommendedModeOfTransport.getModeName()+", you will reduce carbon emissions by " +percentageOfEmissionsSaved + " %");
             }
         }else if (distance>5 && distance<=200)
         {
@@ -283,6 +283,7 @@ public class FootprintTracker {
 
             totalRecommendedEmissions+=recommendedEmissionsList.get(i);
         }
+        System.out.println();
         System.out.println("Actual emmission: "+totalActualEmissions+" \nEmmission with recommended mode: "+ totalRecommendedEmissions);
 
     userInput.close(); 
