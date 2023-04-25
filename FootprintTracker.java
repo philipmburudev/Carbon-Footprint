@@ -82,10 +82,6 @@ public class FootprintTracker {
                                                                        );
         System.out.println();
 
-
-
-
-
         //asking user to enter their origin location
         String origin;
         System.out.println("\n" + "Lets get started. " +  "\n");
@@ -101,8 +97,6 @@ public class FootprintTracker {
             }
         } while (origin.matches("\\d+"));
         System.out.println();
-
-
 
         //asking user to enter their destitnation location
         String destination;
@@ -120,8 +114,6 @@ public class FootprintTracker {
         } while (destination.matches("\\d+"));
         System.out.println();
         
-
-
         //asking user to enter the mode of transport they want to use
         String modeName;
         do {
@@ -147,8 +139,18 @@ public class FootprintTracker {
                 longitude2 = locationLongitude[j];
                 latitude2 = locationLatitude[j];
                 a = (Math.sin((Math.toRadians(latitude2)-Math.toRadians(latitude1))/2)*Math.sin((Math.toRadians(latitude2)-Math.toRadians(latitude1))/2))+(Math.cos(Math.toRadians(latitude2))*Math.sin((Math.toRadians(latitude2)-Math.toRadians(latitude1))/2)*Math.sin((Math.toRadians(longitude2)-Math.toRadians(longitude1))/2)*Math.sin((Math.toRadians(longitude2)-Math.toRadians(longitude1))/2));
+<<<<<<< HEAD
                 distance = a*Math.cos((Math.sin(Math.toRadians(latitude1))*Math.sin(Math.toRadians(latitude2)))+(Math.cos(Math.toRadians(latitude1))*Math.cos(Math.toRadians(latitude2))*Math.cos(Math.toRadians(longitude2-longitude1))))*6371;
                 System.out.println("The distance covered is:" + distance);
+=======
+            distance = a*Math.cos((Math.sin(Math.toRadians(latitude1))*Math.sin(Math.toRadians(latitude2)))+(Math.cos(Math.toRadians(latitude1))*Math.cos(Math.toRadians(latitude2))*Math.cos(Math.toRadians(longitude2-longitude1))))*6371;
+            
+            System.out.println("The distance between " + origin + " and " + destination + " is " + distance + "km.");
+        
+            }
+            else{
+                System.out.println("Location cannot be found");
+>>>>>>> eb6321abc5e931bb09e06f20d2fcc396457d630e
             }
         }
         }
