@@ -1,4 +1,6 @@
 import javax.print.attribute.standard.Destination;
+import java.lang.Math;
+
 
 public class ModesOfTransport{
     protected String modeName;
@@ -80,8 +82,24 @@ public class ModesOfTransport{
     //method to calculate the emission
     public double computeEmission(double distance)
     {
-        return distance*this.emissionPerMile;
+        return Math.round(distance*this.emissionPerMile);
     }
+
+    public ModesOfTransport lowestEmissionsCalculator(ModesOfTransport mode1,ModesOfTransport mode2, double distanceCovered)
+    {
+        if(this.computeEmission(distanceCovered)<mode1.computeEmission(distanceCovered) && this.computeEmission(distanceCovered)<mode2.computeEmission(distanceCovered))
+        {
+            return this;
+        }
+        else if(mode1.computeEmission(distanceCovered)<this.computeEmission(distanceCovered) && mode1.computeEmission(distanceCovered)<mode2.computeEmission(distanceCovered))
+        {
+            return mode1;
+        }
+
+        return mode2;
+        
+    }
+
 
 
 
