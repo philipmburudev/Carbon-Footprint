@@ -41,10 +41,10 @@ public class FootprintTracker {
             numberOfLocationss++;                
         }
 
-        for (int i=0;i<MAXIMUMUM_NUMBER_OF_LOCATIONS;i++)
+        /*for (int i=0;i<MAXIMUMUM_NUMBER_OF_LOCATIONS;i++)
         {
             System.out.println(locationLatitude[i]);
-        }
+        }*/
         Scanner userInput= new Scanner(System.in);
         System.out.println("\n" + "Hello! This is Footprint Forward, here to help you implement sustainable practices in your daily life.");
         System.out.println("To start, you will have to input your origin, destination, and mode of transport you intend to use.\n");
@@ -105,7 +105,7 @@ public class FootprintTracker {
         //asking user to enter their destitnation location
         String destination;
         do {
-            System.out.print("Enter a string: ");
+            System.out.print("Enter your destination: ");
             destination = userInput.nextLine();
             
             if (destination.matches("\\d+")) {
@@ -119,7 +119,7 @@ public class FootprintTracker {
         //asking user to enter the mode of transport they want to use
         String modeName;
         do {
-            System.out.print("Enter a string: ");
+            System.out.print("Enter the mode of transportation you want to use: ");
             modeName = userInput.nextLine();
             
             if (modeName.matches("\\d+")) {
