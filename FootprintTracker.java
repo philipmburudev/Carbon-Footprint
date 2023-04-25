@@ -264,7 +264,7 @@ public class FootprintTracker {
     
                     }
                     else{
-                        System.out.println("Well done! The mode of transport("+ recommendedModeOfTransport.getModeName()+") you intend to use emits the least greenhouse gases.");
+                        System.out.println("Well done! The mode of transport(" + recommendedModeOfTransport.getModeName()+") you intend to use emits the least greenhouse gases.");
                     }
                 } 
                 else {
@@ -284,7 +284,9 @@ public class FootprintTracker {
             totalRecommendedEmissions+=recommendedEmissionsList.get(i);
         }
         System.out.println();
-        System.out.println("Actual emmission: "+totalActualEmissions+" \nEmmission with recommended mode: "+ totalRecommendedEmissions);
+        System.out.println("Actual emmission: " + totalActualEmissions + "\nEmmission with recommended mode: " + totalRecommendedEmissions);
+        System.out.println();
+        System.out.println("The total amount of emissions saved is: " + (totalActualEmissions - totalRecommendedEmissions) + " kg of CO2");
 
     userInput.close(); 
     }
