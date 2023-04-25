@@ -109,6 +109,7 @@ public class ShortestDistance
                         percentageOfEmissionsSaved= Math.round(Math.abs(((intendedModeOfTransport.computeEmission(distance)-recommendedModeOfTransport.computeEmission(distance))/intendedModeOfTransport.computeEmission(distance))*100));
                         actualEmissionsList.add(intendedModeOfTransport.computeEmission(distance));
                         recommendedEmissionsList.add(recommendedModeOfTransport.computeEmission(distance));
+                        System.out.println(recommendedModeOfTransport.computeEmission(distance)+"\n"+intendedModeOfTransport.computeEmission(distance));
                         System.out.println("The mode of transport we recommend you use is "+ recommendedModeOfTransport.getModeName());
                         System.out.println("With this mode of transport "+recommendedModeOfTransport.getModeName()+", you will reduce carbon emissions by " +percentageOfEmissionsSaved + " %");
 
