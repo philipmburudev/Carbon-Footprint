@@ -18,8 +18,8 @@ public class ShortestDistance
         Level2 car = new Level2("Car",0.17);
  
         Level3 train = new Level3("Train",0.17);
-        Level3 ship = new Level3("Ship",0.025);
-        Level3 airplane = new Level3("Airplane",0.32);
+        Level3 ship = new Level3("Ship",193.066);
+        Level3 airplane = new Level3("Airplane",0.42);
 
         String modeName="car";
 
