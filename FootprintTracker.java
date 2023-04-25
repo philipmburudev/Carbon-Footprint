@@ -12,11 +12,7 @@ public class FootprintTracker {
     static final int MAXIMUMUM_NUMBER_OF_LOCATIONS=20;
 
     public FootprintTracker(){}
-
-    private String recommendedModeOfTransport;
-    private double totalActualEmissions; 
-    private double totalRecommendedEmissions;
-    
+  
     
     //main method
     public static void main(String args[]){
@@ -134,7 +130,7 @@ public class FootprintTracker {
                     longitude2 = locationLongitude[j];
                     latitude2 = locationLatitude[j];
                     a = (Math.sin((Math.toRadians(latitude2)-Math.toRadians(latitude1))/2)*Math.sin((Math.toRadians(latitude2)-Math.toRadians(latitude1))/2))+(Math.cos(Math.toRadians(latitude2))*Math.sin((Math.toRadians(latitude2)-Math.toRadians(latitude1))/2)*Math.sin((Math.toRadians(longitude2)-Math.toRadians(longitude1))/2)*Math.sin((Math.toRadians(longitude2)-Math.toRadians(longitude1))/2));
-                    distance = a*Math.cos((Math.sin(Math.toRadians(latitude1))*Math.sin(Math.toRadians(latitude2)))+(Math.cos(Math.toRadians(latitude1))*Math.cos(Math.toRadians(latitude2))*Math.cos(Math.toRadians(longitude2-longitude1))))*6371;
+                    distance = a*Math.cos((Math.sin(Math.toRadians(latitude1))*Math.sin(Math.toRadians(latitude2)))+(Math.cos(Math.toRadians(latitude1))*Math.cos(Math.toRadians(latitude2))*Math.cos(Math.toRadians(longitude2-longitude1))))*6371000;
                     System.out.println("The distance between " + origin + " and " + destination + " is " + distance + "km.");
                 }
         }

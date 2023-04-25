@@ -24,6 +24,7 @@ public class ShortestDistance
         String modeName="car";
 
         double distance= 211;
+        
         ModesOfTransport recommendedModeOfTransport;
         ModesOfTransport intendedModeOfTransport;
 
