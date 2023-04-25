@@ -101,15 +101,12 @@ public class FootprintTracker {
         System.out.println();
 
 
+        
 
         //asking user to enter their destitnation location
         String destination;
         do {
-<<<<<<< HEAD
             System.out.print("Please enter your destination: ");
-=======
-            System.out.print("Enter your destination: ");
->>>>>>> 5a74b7086e4ea606439a742f78d71a4fa27579f7
             destination = userInput.nextLine();
             
             if (destination.matches("\\d+")) {
@@ -120,20 +117,20 @@ public class FootprintTracker {
         
 
 
+
         //asking user to enter the mode of transport they want to use
         String modeName;
         do {
-<<<<<<< HEAD
             System.out.print("Please enter your mode of transport: ");
-=======
-            System.out.print("Enter the mode of transportation you want to use: ");
->>>>>>> 5a74b7086e4ea606439a742f78d71a4fa27579f7
             modeName = userInput.nextLine();
             
             if (modeName.matches("\\d+")) {
                 System.out.println("Invalid mode of transport. Please enter a valid mode of transport.");
             }
         } while (modeName.matches("\\d+"));
+
+
+
 
         // Finding the distance between two locations
         double longitude1,longitude2,latitude1,latitude2,distance,a;
