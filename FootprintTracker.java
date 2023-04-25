@@ -123,7 +123,7 @@ public class FootprintTracker {
         for(int i=0;i<locationName.length;i++)
         {
             for(int j=0;j<locationName.length;j++){
-                if(origin.equals(locationName[i]) && destination.equals(locationName[j]))
+                if(origin.equalsIgnoreCase(locationName[i]) && destination.equalsIgnoreCase(locationName[j]))
                 {
                     longitude1 = locationLongitude[i];
                     latitude1 = locationLatitude[i];
