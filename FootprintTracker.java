@@ -93,9 +93,10 @@ public class FootprintTracker {
             System.out.print("Please enter your origin: ");
             origin = userInput.nextLine();
             
-            if (origin.matches("\\d+")) 
+            while(origin.matches("\\d+")) 
             {
                 System.out.println("Invalid input! Please enter a valid location.");
+                origin = userInput.nextLine();
             }
         } while (origin.matches("\\d+"));
         System.out.println();
@@ -107,9 +108,13 @@ public class FootprintTracker {
         do {
             System.out.print("Enter your destination: ");
             destination = userInput.nextLine();
-            
+            while(destination.equals(origin)){
+                System.out.println("This is your origin and cannot be your destination\nTry again with a different location");
+                destination = userInput.nextLine();
+            }
             if (destination.matches("\\d+")) {
                 System.out.println("Invalid input! Please enter a valid location.");
+                destination = userInput.nextLine();
             }
         } while (destination.matches("\\d+"));
         System.out.println();
@@ -127,7 +132,9 @@ public class FootprintTracker {
             }
         } while (modeName.matches("\\d+"));
 
-        // Finding the distance between two locations
+
+
+        // Finding the distance between two locations using their longitudes and latitudes
         double longitude1,longitude2,latitude1,latitude2,distance,a;
         for(int i=0;i<locationName.length;i++)
         {
@@ -144,7 +151,7 @@ public class FootprintTracker {
                 System.out.println("Location cannot be found");
             }
         }
-    userInput.close(); //om
+    userInput.close(); 
     }
     catch (FileNotFoundException e)
     {
