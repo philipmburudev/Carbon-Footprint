@@ -138,12 +138,13 @@ public class FootprintTracker {
         double longitude1,longitude2,latitude1,latitude2,distance,a;
         for(int i=0;i<locationName.length;i++)
         {
-            if(origin.equals(locationName[i]) && destination.equals(locationName[i]) && !destination.equals(origin))
+            for(int j=0;j<locationName.length;j++)
+            if(origin.equals(locationName[i]) && destination.equals(locationName[j]) && !destination.equals(origin))
             {
                 longitude1 = locationLongitude[i];
                 latitude1 = locationLatitude[i];
-                longitude2 = locationLongitude[i];
-                latitude2 = locationLatitude[i];
+                longitude2 = locationLongitude[j];
+                latitude2 = locationLatitude[j];
                 a = (Math.sin((Math.toRadians(latitude2)-Math.toRadians(latitude1))/2)*Math.sin((Math.toRadians(latitude2)-Math.toRadians(latitude1))/2))+(Math.cos(Math.toRadians(latitude2))*Math.sin((Math.toRadians(latitude2)-Math.toRadians(latitude1))/2)*Math.sin((Math.toRadians(longitude2)-Math.toRadians(longitude1))/2)*Math.sin((Math.toRadians(longitude2)-Math.toRadians(longitude1))/2));
             distance = a*Math.cos((Math.sin(Math.toRadians(latitude1))*Math.sin(Math.toRadians(latitude2)))+(Math.cos(Math.toRadians(latitude1))*Math.cos(Math.toRadians(latitude2))*Math.cos(Math.toRadians(longitude2-longitude1))))*6371;
             }
