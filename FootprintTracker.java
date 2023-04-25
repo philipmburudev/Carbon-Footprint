@@ -137,9 +137,6 @@ public class FootprintTracker {
                     distance = a*Math.cos((Math.sin(Math.toRadians(latitude1))*Math.sin(Math.toRadians(latitude2)))+(Math.cos(Math.toRadians(latitude1))*Math.cos(Math.toRadians(latitude2))*Math.cos(Math.toRadians(longitude2-longitude1))))*6371;
                     System.out.println("The distance between " + origin + " and " + destination + " is " + distance + "km.");
                 }
-            else{
-                System.out.println("Location cannot be found");
-            }
         }
         }
     userInput.close(); 
