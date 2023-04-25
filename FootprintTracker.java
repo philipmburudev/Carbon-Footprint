@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.io.File;
 import java.lang.StringBuilder;
 import javax.lang.model.util.Elements.Origin;
+import java.lang.Math;
 
 public class FootprintTracker {
 
@@ -16,7 +17,8 @@ public class FootprintTracker {
     private String recommendedModeOfTransport;
     private double totalActualEmissions; 
     private double totalRecommendedEmissions;
- 
+    
+    
     //main method
     public static void main(String args[]){
     try
@@ -126,12 +128,23 @@ public class FootprintTracker {
         } while (modeName.matches("\\d+"));
 
         // Finding the distance between two locations
-        for(int i=0;i<20;i++){
-            if(origin.equals(locationName[i])){
-                
+        double longitude1,longitude2,latitude1,latitude2,distance,a;
+        for(int i=0;i<locationName.length;i++)
+        {
+            if(origin.equals(locationName[i]) && destination.equals(locationName[i]) && !destination.equals(origin))
+            {
+                longitude1 = locationLongitude[i];
+                latitude1 = locationLatitude[i];
+                longitude2 = locationLongitude[i];
+                latitude2 = locationLatitude[i];
+                a = (Math.sin((Math.toRadians(latitude2)-Math.toRadians(latitude1))/2)*Math.sin((Math.toRadians(latitude2)-Math.toRadians(latitude1))/2))+(Math.cos(Math.toRadians(latitude2))*Math.sin((Math.toRadians(latitude2)-Math.toRadians(latitude1))/2)*Math.sin((Math.toRadians(longitude2)-Math.toRadians(longitude1))/2)*Math.sin((Math.toRadians(longitude2)-Math.toRadians(longitude1))/2));
+            distance = a*Math.cos((Math.sin(Math.toRadians(latitude1))*Math.sin(Math.toRadians(latitude2)))+(Math.cos(Math.toRadians(latitude1))*Math.cos(Math.toRadians(latitude2))*Math.cos(Math.toRadians(longitude2-longitude1))))*6371;
+            }
+            else{
+                System.out.println("Location cannot be found");
             }
         }
-        
+    userInput.close(); //om
     }
     catch (FileNotFoundException e)
     {
