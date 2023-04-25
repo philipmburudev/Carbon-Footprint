@@ -104,7 +104,7 @@ public class FootprintTracker {
             System.out.print("Enter your destination: ");
             destination = userInput.nextLine();
             while(destination.equals(origin)){
-                System.out.println("This is your origin and cannot be your destination\nTry again with a different location");
+                System.out.println("This has been taken as your origin and cannot be your destination\nTry again with a different destination location");
                 destination = userInput.nextLine();
             }
             if (destination.matches("\\d+")) {
