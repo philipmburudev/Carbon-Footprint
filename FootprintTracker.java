@@ -52,9 +52,9 @@ public class FootprintTracker {
                                                                        + walking.getModeName()
                                                                        );
 
-        Level2 motorbike = new Level2("Motorbike",0.18);
-        Level2 bus = new Level2("Bus",0.29);
-        Level2 car = new Level2("Car",0.17);
+        Level2 motorbike = new Level2("Motorbike",0.4);
+        Level2 bus = new Level2("Bus",0.68);
+        Level2 car = new Level2("Car",0.89);
         System.out.println();
         System.out.println("The modes of transport in level 2 are: \n" + motorbike.getModeName()+"\n"
                                                                        + bus.getModeName()      +"\n"
@@ -62,8 +62,8 @@ public class FootprintTracker {
                                                                        );
 
         Level3 train = new Level3("Train",0.17);
-        Level3 ship = new Level3("Ship",0.025);
-        Level3 airplane = new Level3("Airplane",0.32);
+        Level3 ship = new Level3("Ship",193.066);
+        Level3 airplane = new Level3("Airplane",0.42);
         System.out.println();
         System.out.println("The modes of transport in level 3 are: \n" + train.getModeName()+"\n"
                                                                        + ship.getModeName() +"\n"
