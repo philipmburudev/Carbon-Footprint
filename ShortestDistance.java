@@ -29,8 +29,8 @@ public class ShortestDistance
 
         double percentageOfEmissionsSaved=0;
 
-        List<Double> totalActualEmissions = new ArrayList<Double>();
-        List<Double> totalRecommendedEmissions = new ArrayList<Double>();
+        List<Double> actualEmissionsList = new ArrayList<Double>();
+        List<Double> recommendedEmissionsList = new ArrayList<Double>();
 
 
 
@@ -86,6 +86,8 @@ public class ShortestDistance
             else
             {
                     percentageOfEmissionsSaved= 100;
+                    actualEmissionsList.add(intendedModeOfTransport.computeEmission(distance));
+                    recommendedEmissionsList.add(recommendedModeOfTransport.computeEmission(distance));
                     System.out.println("The mode of transport we recommend you use is "+ recommendedModeOfTransport.getModeName());
                     System.out.println("With this mode of transport"+recommendedModeOfTransport.getModeName()+", you will reduce carbon emissions by " +percentageOfEmissionsSaved + " %");
             }
@@ -104,11 +106,11 @@ public class ShortestDistance
                     if(intendedModeOfTransport.computeEmission(distance)>0)
                     {
                         percentageOfEmissionsSaved= Math.round(Math.abs(((intendedModeOfTransport.computeEmission(distance)-recommendedModeOfTransport.computeEmission(distance))/intendedModeOfTransport.computeEmission(distance))*100));
-            
-                        // percentageOfEmissionsSaved= (((intendedModeOfTransport.computeEmission(distance))-(recommendedModeOfTransport.computeEmission(distance)))/intendedModeOfTransport.computeEmission(distance))*100;                    System.out.println(recommendedModeOfTransport.computeEmission(distance)+"\n"+intendedModeOfTransport.computeEmission(distance));
+                        actualEmissionsList.add(intendedModeOfTransport.computeEmission(distance));
+                        recommendedEmissionsList.add(recommendedModeOfTransport.computeEmission(distance));
                         System.out.println("The mode of transport we recommend you use is "+ recommendedModeOfTransport.getModeName());
                         System.out.println("With this mode of transport "+recommendedModeOfTransport.getModeName()+", you will reduce carbon emissions by " +percentageOfEmissionsSaved + " %");
-    
+
                     }
                     else{
                         System.out.println("Well done! The mode of transport("+ recommendedModeOfTransport.getModeName()+") you intend to use emits the least greenhouse gases.");
@@ -133,6 +135,8 @@ public class ShortestDistance
                 if (intendedModeOfTransport != null ) {
                     if(intendedModeOfTransport.computeEmission(distance)>0)
                     {
+                        actualEmissionsList.add(intendedModeOfTransport.computeEmission(distance));
+                        recommendedEmissionsList.add(recommendedModeOfTransport.computeEmission(distance));
                         percentageOfEmissionsSaved= Math.round(Math.abs(((intendedModeOfTransport.computeEmission(distance)-recommendedModeOfTransport.computeEmission(distance))/intendedModeOfTransport.computeEmission(distance))*100));
             
                         System.out.println("The mode of transport we recommend you use is "+ recommendedModeOfTransport.getModeName());
@@ -151,5 +155,14 @@ public class ShortestDistance
             }
         }
 
+       double totalActualEmissions=0;
+       double totalRecommendedEmissions=0;
+
+        for (int i = 0; i < actualEmissionsList.size(); i++) {
+            totalActualEmissions+=actualEmissionsList.get(i);
+
+            totalRecommendedEmissions+=recommendedEmissionsList.get(i);
+        }
+        System.out.println("actual: "+totalActualEmissions+" \nrecommended: "+ totalRecommendedEmissions);
     }
 }
