@@ -8,17 +8,7 @@ import java.lang.StringBuilder;
 
 public class ShortestDistance 
 {
-<<<<<<< HEAD
-    static final int MAXIMUMUM_NUMBER_OF_LOCATIONS=20;
-    public String[] locationsStringType;
-=======
 
->>>>>>> d70fa2c6a6ac00897007702281daa4feb125ad43
-    public static void main(String[] args)
-
-    {
-
-<<<<<<< HEAD
     try
     {
         Scanner inputStream = new Scanner (new File("Ghana.csv"));         
