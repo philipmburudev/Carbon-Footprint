@@ -105,7 +105,7 @@ public class FootprintTracker {
         //asking user to enter their destitnation location
         String destination;
         do {
-            System.out.print("Enter a string: ");
+            System.out.print("Please enter your destination: ");
             destination = userInput.nextLine();
             
             if (destination.matches("\\d+")) {
@@ -119,7 +119,7 @@ public class FootprintTracker {
         //asking user to enter the mode of transport they want to use
         String modeName;
         do {
-            System.out.print("Enter a string: ");
+            System.out.print("Please enter your mode of transport: ");
             modeName = userInput.nextLine();
             
             if (modeName.matches("\\d+")) {
