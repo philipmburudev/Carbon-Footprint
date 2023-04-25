@@ -12,11 +12,7 @@ public class FootprintTracker {
     static final int MAXIMUMUM_NUMBER_OF_LOCATIONS=20;
 
     public FootprintTracker(){}
-
-    private String recommendedModeOfTransport;
-    private double totalActualEmissions; 
-    private double totalRecommendedEmissions;
-    
+  
     
     //main method
     public static void main(String args[]){
