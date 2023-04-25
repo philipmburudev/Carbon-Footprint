@@ -78,9 +78,9 @@ public class ModesOfTransport{
 
 
     //method to calculate the emission
-    public double computeEmission(double distance, double emissionPerMile)
+    public double computeEmission(double distance)
     {
-        return distance*emissionPerMile;
+        return distance*this.emissionPerMile;
     }
 
 

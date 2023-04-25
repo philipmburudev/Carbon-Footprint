@@ -81,10 +81,6 @@ public class FootprintTracker {
                                                                        );
         System.out.println();
 
-
-
-
-
         //asking user to enter their origin location
         String origin;
         System.out.println("\n" + "Lets get started. " +  "\n");
@@ -100,8 +96,6 @@ public class FootprintTracker {
         } while (origin.matches("\\d+"));
         System.out.println();
 
-
-
         //asking user to enter their destitnation location
         String destination;
         do {
@@ -114,8 +108,6 @@ public class FootprintTracker {
         } while (destination.matches("\\d+"));
         System.out.println();
         
-
-
         //asking user to enter the mode of transport they want to use
         String modeName;
         do {
@@ -144,7 +136,19 @@ public class FootprintTracker {
                 System.out.println("Location cannot be found");
             }
         }
-    userInput.close(); //om
+
+
+        // if (distance>0 && distance<=5)
+        // {
+        //     if(walking.computeEmission(distance)<10)
+        //     {
+        //         System.out.println();
+        //     }
+        // }
+
+        userInput.close(); //om
+
+
     }
     catch (FileNotFoundException e)
     {
