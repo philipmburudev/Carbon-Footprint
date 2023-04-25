@@ -1,1 +1,1 @@
-hi there
+This is how our system works
