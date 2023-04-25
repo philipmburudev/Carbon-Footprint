@@ -6,7 +6,6 @@ import java.io.IOException;
 import java.io.File;
 import java.lang.StringBuilder;
 import javax.lang.model.util.Elements.Origin;
-import java.lang.Math;
 
 public class FootprintTracker {
 
