@@ -41,10 +41,11 @@ public class FootprintTracker {
             numberOfLocationss++;                
         }
 
-        /*for (int i=0;i<MAXIMUMUM_NUMBER_OF_LOCATIONS;i++)
+        for (int i=0;i<MAXIMUMUM_NUMBER_OF_LOCATIONS;i++)
         {
             System.out.println(locationLatitude[i]);
-        }*/
+            System.out.println(locationName[i]);
+        }
         Scanner userInput= new Scanner(System.in);
         System.out.println("\n" + "Hello! This is Footprint Forward, here to help you implement sustainable practices in your daily life.");
         System.out.println("To start, you will have to input your origin, destination, and mode of transport you intend to use.\n");
@@ -138,7 +139,7 @@ public class FootprintTracker {
         double longitude1,longitude2,latitude1,latitude2,distance,a;
         for(int i=0;i<locationName.length;i++)
         {
-            for(int j=0;j<locationName.length;j++)
+            for(int j=0;j<locationName.length;j++){
             if(origin.equals(locationName[i]) && destination.equals(locationName[j]) && !destination.equals(origin))
             {
                 longitude1 = locationLongitude[i];
@@ -146,11 +147,10 @@ public class FootprintTracker {
                 longitude2 = locationLongitude[j];
                 latitude2 = locationLatitude[j];
                 a = (Math.sin((Math.toRadians(latitude2)-Math.toRadians(latitude1))/2)*Math.sin((Math.toRadians(latitude2)-Math.toRadians(latitude1))/2))+(Math.cos(Math.toRadians(latitude2))*Math.sin((Math.toRadians(latitude2)-Math.toRadians(latitude1))/2)*Math.sin((Math.toRadians(longitude2)-Math.toRadians(longitude1))/2)*Math.sin((Math.toRadians(longitude2)-Math.toRadians(longitude1))/2));
-            distance = a*Math.cos((Math.sin(Math.toRadians(latitude1))*Math.sin(Math.toRadians(latitude2)))+(Math.cos(Math.toRadians(latitude1))*Math.cos(Math.toRadians(latitude2))*Math.cos(Math.toRadians(longitude2-longitude1))))*6371;
+                distance = a*Math.cos((Math.sin(Math.toRadians(latitude1))*Math.sin(Math.toRadians(latitude2)))+(Math.cos(Math.toRadians(latitude1))*Math.cos(Math.toRadians(latitude2))*Math.cos(Math.toRadians(longitude2-longitude1))))*6371;
+                System.out.println("The distance covered is:" + distance);
             }
-            else{
-                System.out.println("Location cannot be found");
-            }
+        }
         }
     userInput.close(); 
     }
