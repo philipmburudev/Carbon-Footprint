@@ -81,7 +81,7 @@ public class ShortestDistance
 
             if (recommendedModeOfTransport.getModeName().equalsIgnoreCase(modeName))
             {
-                System.out.println("Well done! The mode of transport("+ recommendedModeOfTransport.getModeName()+") you intend to use emits the lease greenhouse gases.");
+                System.out.println("Well done! The mode of transport("+ recommendedModeOfTransport.getModeName()+") you intend to use emits the least greenhouse gases.");
             }
             else
             {
