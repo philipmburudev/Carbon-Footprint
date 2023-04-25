@@ -124,7 +124,8 @@ public class FootprintTracker {
 
 
         // Finding the distance between two locations using their longitudes and latitudes
-        double longitude1,longitude2,latitude1,latitude2,distance,c,a;
+        double longitude1,longitude2,latitude1,latitude2,c,a;
+        double distance=0;
         for(int i=0;i<locationName.length;i++)
         {
             for(int j=0;j<locationName.length;j++){
