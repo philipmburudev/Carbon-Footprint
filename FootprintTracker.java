@@ -144,7 +144,7 @@ public class FootprintTracker {
                 System.out.println("Location cannot be found");
             }
         }
-    userInput.close();
+    userInput.close(); //om
     }
     catch (FileNotFoundException e)
     {
