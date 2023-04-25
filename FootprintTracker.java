@@ -129,7 +129,7 @@ public class FootprintTracker {
                     longitude2 = locationLongitude[j];
                     latitude2 = locationLatitude[j];
                     a = (Math.sin((Math.toRadians(latitude2)-Math.toRadians(latitude1))/2)*Math.sin((Math.toRadians(latitude2)-Math.toRadians(latitude1))/2))+(Math.cos(Math.toRadians(latitude2))*Math.cos(Math.toRadians(latitude1))*Math.sin((Math.toRadians(longitude2)-Math.toRadians(longitude1))/2)*Math.sin((Math.toRadians(longitude2)-Math.toRadians(longitude1))/2));
-                    c = 2*Math.atan2(Math.sqrt(a),Math.sqrt(1-a));
+                    c = 2*Math.atan2(Math.sqrt(a),Math.sqrt(1-a));  //203.66km  126.6miles
                     distance = c*6371*0.621371;
                     System.out.println("The distance between " + origin + " and " + destination + " is " + distance + "miles.");
                 }
