@@ -89,6 +89,8 @@ public class FootprintTracker {
         } while (origin.matches("\\d+"));
         System.out.println();
 
+
+
         //asking user to enter their destitnation location
         String destination;
         do {
@@ -104,6 +106,8 @@ public class FootprintTracker {
             }
         } while (destination.matches("\\d+"));
         System.out.println();
+        
+
         
         //asking user to enter the mode of transport they want to use
         String modeName;
