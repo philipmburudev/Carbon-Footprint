@@ -31,11 +31,10 @@ public class FootprintTracker {
             line = inputStream.nextLine();
             String[] locationsStringType = line.split(",");
             locationName[numberOfLocationss]=locationsStringType[0];
-            locationLongitude[numberOfLocationss]=Double.parseDouble(locationsStringType[1]) ;
-            locationLatitude[numberOfLocationss]=Double.parseDouble(locationsStringType[2]) ;
-            numberOfLocationss++;                
+            locationLatitude[numberOfLocationss]=Double.parseDouble(locationsStringType[1]) ;
+            locationLongitude[numberOfLocationss]=Double.parseDouble(locationsStringType[2]) ;
+            numberOfLocationss++;            
         }
-
         Scanner userInput= new Scanner(System.in);
         System.out.println("\n" + "Hello! This is Footprint Forward, here to help you implement sustainable practices in your daily life.");
         System.out.println("To start, you will have to input your origin, destination, and mode of transport you intend to use.\n");
@@ -123,7 +122,7 @@ public class FootprintTracker {
 
 
         // Finding the distance between two locations using their longitudes and latitudes
-        double longitude1,longitude2,latitude1,latitude2,distance,a;
+        double longitude1,longitude2,latitude1,latitude2,distance,c,a;
         for(int i=0;i<locationName.length;i++)
         {
             for(int j=0;j<locationName.length;j++){
@@ -133,11 +132,12 @@ public class FootprintTracker {
                     latitude1 = locationLatitude[i];
                     longitude2 = locationLongitude[j];
                     latitude2 = locationLatitude[j];
-                    a = (Math.sin((Math.toRadians(latitude2)-Math.toRadians(latitude1))/2)*Math.sin((Math.toRadians(latitude2)-Math.toRadians(latitude1))/2))+(Math.cos(Math.toRadians(latitude2))*Math.sin((Math.toRadians(latitude2)-Math.toRadians(latitude1))/2)*Math.sin((Math.toRadians(longitude2)-Math.toRadians(longitude1))/2)*Math.sin((Math.toRadians(longitude2)-Math.toRadians(longitude1))/2));
-                    distance = a*Math.cos((Math.sin(Math.toRadians(latitude1))*Math.sin(Math.toRadians(latitude2)))+(Math.cos(Math.toRadians(latitude1))*Math.cos(Math.toRadians(latitude2))*Math.cos(Math.toRadians(longitude2-longitude1))))*6371000;
-                    System.out.println("The distance between " + origin + " and " + destination + " is " + distance + "km.");
+                    a = (Math.sin((Math.toRadians(latitude2)-Math.toRadians(latitude1))/2)*Math.sin((Math.toRadians(latitude2)-Math.toRadians(latitude1))/2))+(Math.cos(Math.toRadians(latitude2))*Math.cos(Math.toRadians(latitude1))*Math.sin((Math.toRadians(longitude2)-Math.toRadians(longitude1))/2)*Math.sin((Math.toRadians(longitude2)-Math.toRadians(longitude1))/2));
+                    c = 2*Math.atan2(Math.sqrt(a),Math.sqrt(1-a));  //203.66km  126.6miles
+                    distance = c*6371*0.621371;
+                    System.out.println("The distance between " + origin + " and " + destination + " is " + distance + "miles.");
                 }
-        }
+            }
         }
     userInput.close(); 
     }
