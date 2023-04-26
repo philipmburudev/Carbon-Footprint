@@ -20,6 +20,8 @@ public class FootprintTracker {
     public static void main(String args[]){
     try
     {
+        String startAgain;
+        do{
         Scanner inputStream = new Scanner (new File("Places.csv"));         
         
         String line = inputStream.nextLine();
@@ -37,7 +39,7 @@ public class FootprintTracker {
             locationLongitude[numberOfLocationss]=Double.parseDouble(locationsStringType[2]) ;
             numberOfLocationss++;            
         }
-        Scanner userInput= new Scanner(System.in);
+        
         System.out.println("\n" + "Hello! This is Footprint Forward, here to help you implement sustainable practices in your daily life.");
         System.out.println("To start, you will have to input your origin, destination, and mode of transport you intend to use.\n");
         
@@ -76,6 +78,7 @@ public class FootprintTracker {
         //asking user to enter their origin location
         String origin;
         System.out.println("\n" + "Lets get started. " +  "\n");
+        Scanner userInput= new Scanner(System.in);
         do 
         {
             System.out.print("Please enter your origin: ");
@@ -283,14 +286,25 @@ public class FootprintTracker {
             totalRecommendedEmissions+=recommendedEmissionsList.get(i);
         }
         System.out.println("actual: "+totalActualEmissions+" \nrecommended: "+ totalRecommendedEmissions);
-
-    userInput.close(); 
+        
+        
+        System.out.println("This is the end for this set\nOn to the next");
+        System.out.println("Do you want to start again for another day?\nYes or No");
+        startAgain = userInput.nextLine();
+        while(!startAgain.equalsIgnoreCase("Yes") && !startAgain.equalsIgnoreCase("No")){
+            System.out.println("Your answer is not valid. Answer again");
+            startAgain = userInput.nextLine();
+        }
+        userInput.close();
+        }while(startAgain.equalsIgnoreCase("Yes"));
     }
     catch (FileNotFoundException e)
     {
         System.out.println("Cannot find file");
     }
-    
+    catch(NumberFormatException b){
+        System.out.println("The input of a number is invalid");
+    }
         
 }
 
