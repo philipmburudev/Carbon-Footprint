@@ -21,6 +21,7 @@ public class FootprintTracker {
     try
     {
         String startAgain;
+        Scanner userInput4 = new Scanner(System.in);
         do{
         Scanner inputStream = new Scanner (new File("Places.csv"));         
         
@@ -78,9 +79,9 @@ public class FootprintTracker {
         //asking user to enter their origin location
         String origin;
         System.out.println("\n" + "Lets get started. " +  "\n");
-        Scanner userInput= new Scanner(System.in);
         do 
         {
+            Scanner userInput= new Scanner(System.in);
             System.out.print("Please enter your origin: ");
             origin = userInput.nextLine();
             
@@ -98,15 +99,16 @@ public class FootprintTracker {
         //asking user to enter their destitnation location
         String destination;
         do {
+            Scanner userInput2 = new Scanner(System.in);
             System.out.print("Enter your destination: ");
-            destination = userInput.nextLine();
+            destination = userInput2.nextLine();
             while(destination.equals(origin)){
                 System.out.println("This has been taken as your origin and cannot be your destination\nTry again with a different destination location");
-                destination = userInput.nextLine();
+                destination = userInput2.nextLine();
             }
             if (destination.matches("\\d+")) {
                 System.out.println("Invalid input! Please enter a valid location.");
-                destination = userInput.nextLine();
+                destination = userInput2.nextLine();
             }
         } while (destination.matches("\\d+"));
         System.out.println();
@@ -116,8 +118,9 @@ public class FootprintTracker {
         //asking user to enter the mode of transport they want to use
         String modeName;
         do {
+            Scanner userInput3 = new Scanner(System.in);
             System.out.print("Enter the mode of transportation you want to use: ");
-            modeName = userInput.nextLine();
+            modeName = userInput3.nextLine();
             
             if (modeName.matches("\\d+")) {
                 System.out.println("Invalid mode of transport. Please enter a valid mode of transport.");
@@ -278,33 +281,21 @@ public class FootprintTracker {
             }
         }
 
-        
-        
         System.out.println("This is the end for this set\nOn to the next");
         System.out.println("Do you want to start again for another day?\nYes or No");
-        startAgain = userInput.nextLine();
-        userInput.close();
-        }while(startAgain.equalsIgnoreCase("Yes"));
-
+        startAgain = userInput4.nextLine();
         while(!startAgain.equalsIgnoreCase("Yes") && !startAgain.equalsIgnoreCase("No")){
             System.out.println("Your answer is not valid. Answer again");
-            startAgain = userInput.nextLine();
+            startAgain = userInput4.nextLine();
         }
+        }while(startAgain.equalsIgnoreCase("Yes"));
 
-        double totalActualEmissions=0;
-        double totalRecommendedEmissions=0;
 
-        for (int i = 0; i < actualEmissionsList.size(); i++) {
-            totalActualEmissions+=actualEmissionsList.get(i);
-
-            totalRecommendedEmissions+=recommendedEmissionsList.get(i);
-        }
-
-        System.out.println("actual: "+totalActualEmissions+" \nrecommended: "+ totalRecommendedEmissions);
+        
         System.out.println();
-        System.out.println("Actual emmission: " + totalActualEmissions + "\nEmmission with recommended mode: " + totalRecommendedEmissions);
+        //System.out.println("Actual emmission: " + totalActualEmissions + "\nEmmission with recommended mode: " + totalRecommendedEmissions);
         System.out.println();
-        System.out.println("The total amount of emissions saved is: " + (totalActualEmissions - totalRecommendedEmissions) + " kg of CO2");
+        //System.out.println("The total amount of emissions saved is: " + (totalActualEmissions - totalRecommendedEmissions) + " kg of CO2");
 
     
     }
