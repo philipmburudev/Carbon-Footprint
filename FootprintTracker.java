@@ -90,7 +90,7 @@ public class FootprintTracker {
                 System.out.println("Invalid input! Please enter a valid location.");
                 origin = userInput.nextLine();
             }
-
+            userInput.close();
         } while (origin.matches("\\d+"));
         System.out.println();
 
@@ -110,6 +110,7 @@ public class FootprintTracker {
                 System.out.println("Invalid input! Please enter a valid location.");
                 destination = userInput2.nextLine();
             }
+            userInput2.close();
         } while (destination.matches("\\d+"));
         System.out.println();
         
@@ -125,6 +126,7 @@ public class FootprintTracker {
             if (modeName.matches("\\d+")) {
                 System.out.println("Invalid mode of transport. Please enter a valid mode of transport.");
             }
+            userInput3.close();
         } while (modeName.matches("\\d+"));
         System.out.println();
 
@@ -289,7 +291,7 @@ public class FootprintTracker {
             startAgain = userInput4.nextLine();
         }
         }while(startAgain.equalsIgnoreCase("Yes"));
-
+        userInput4.close();
 
         
         System.out.println();
