@@ -123,6 +123,8 @@ public class FootprintTracker {
                 System.out.println("Invalid mode of transport. Please enter a valid mode of transport.");
             }
         } while (modeName.matches("\\d+"));
+        System.out.println();
+
 
 
 
@@ -145,6 +147,7 @@ public class FootprintTracker {
                 }
             }
         }
+        System.out.println();
 
         ModesOfTransport recommendedModeOfTransport;
         ModesOfTransport intendedModeOfTransport;
@@ -201,20 +204,18 @@ public class FootprintTracker {
         {
             recommendedModeOfTransport=walking.findLowestEmitter(scooter, bicycle, distance);
 
-            if (recommendedModeOfTransport.getModeName().equalsIgnoreCase(modeName))
-            {
+            if (recommendedModeOfTransport.getModeName().equalsIgnoreCase(modeName)){
                 System.out.println("Well done! The mode of transport("+ recommendedModeOfTransport.getModeName()+") you intend to use emits the least greenhouse gases.");
-            }
-            else
+            }else
             {
                     percentageOfEmissionsSaved= 100;
                     actualEmissionsList.add(intendedModeOfTransport.computeEmission(distance));
                     recommendedEmissionsList.add(recommendedModeOfTransport.computeEmission(distance));
                     System.out.println("The mode of transport we recommend you use is "+ recommendedModeOfTransport.getModeName());
+                    System.out.println();
                     System.out.println("With this mode of transport"+recommendedModeOfTransport.getModeName()+", you will reduce carbon emissions by " +percentageOfEmissionsSaved + " %");
             }
-        }
-        else if (distance>5 && distance<=200)
+        }else if (distance>5 && distance<=200)
         {
             recommendedModeOfTransport=motorbike.findLowestEmitter(car, bus, distance);
 
@@ -266,7 +267,7 @@ public class FootprintTracker {
     
                     }
                     else{
-                        System.out.println("Well done! The mode of transport("+ recommendedModeOfTransport.getModeName()+") you intend to use emits the least greenhouse gases.");
+                        System.out.println("Well done! The mode of transport(" + recommendedModeOfTransport.getModeName()+") you intend to use emits the least greenhouse gases.");
                     }
                 } 
                 else {
@@ -285,6 +286,7 @@ public class FootprintTracker {
 
             totalRecommendedEmissions+=recommendedEmissionsList.get(i);
         }
+
         System.out.println("actual: "+totalActualEmissions+" \nrecommended: "+ totalRecommendedEmissions);
         
         
@@ -297,6 +299,13 @@ public class FootprintTracker {
         }
         userInput.close();
         }while(startAgain.equalsIgnoreCase("Yes"));
+
+        System.out.println();
+        System.out.println("Actual emmission: " + totalActualEmissions + "\nEmmission with recommended mode: " + totalRecommendedEmissions);
+        System.out.println();
+        System.out.println("The total amount of emissions saved is: " + (totalActualEmissions - totalRecommendedEmissions) + " kg of CO2");
+
+    
     }
     catch (FileNotFoundException e)
     {
