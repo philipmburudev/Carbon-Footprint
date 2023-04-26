@@ -278,8 +278,21 @@ public class FootprintTracker {
             }
         }
 
-       double totalActualEmissions=0;
-       double totalRecommendedEmissions=0;
+        
+        
+        System.out.println("This is the end for this set\nOn to the next");
+        System.out.println("Do you want to start again for another day?\nYes or No");
+        startAgain = userInput.nextLine();
+        userInput.close();
+        }while(startAgain.equalsIgnoreCase("Yes"));
+
+        while(!startAgain.equalsIgnoreCase("Yes") && !startAgain.equalsIgnoreCase("No")){
+            System.out.println("Your answer is not valid. Answer again");
+            startAgain = userInput.nextLine();
+        }
+
+        double totalActualEmissions=0;
+        double totalRecommendedEmissions=0;
 
         for (int i = 0; i < actualEmissionsList.size(); i++) {
             totalActualEmissions+=actualEmissionsList.get(i);
@@ -288,18 +301,6 @@ public class FootprintTracker {
         }
 
         System.out.println("actual: "+totalActualEmissions+" \nrecommended: "+ totalRecommendedEmissions);
-        
-        
-        System.out.println("This is the end for this set\nOn to the next");
-        System.out.println("Do you want to start again for another day?\nYes or No");
-        startAgain = userInput.nextLine();
-        while(!startAgain.equalsIgnoreCase("Yes") && !startAgain.equalsIgnoreCase("No")){
-            System.out.println("Your answer is not valid. Answer again");
-            startAgain = userInput.nextLine();
-        }
-        userInput.close();
-        }while(startAgain.equalsIgnoreCase("Yes"));
-
         System.out.println();
         System.out.println("Actual emmission: " + totalActualEmissions + "\nEmmission with recommended mode: " + totalRecommendedEmissions);
         System.out.println();
