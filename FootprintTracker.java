@@ -50,6 +50,7 @@ public class FootprintTracker {
         
 
         
+        
         //creating objects for the different modes of transport
         Level1 bicycle = new Level1("Bicycle",0);
         Level1 walking = new Level1("Walking",0);
