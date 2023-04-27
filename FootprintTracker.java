@@ -283,6 +283,7 @@ public class FootprintTracker {
             }
         }
 
+        System.out.println();
         System.out.println("This is the end for this set\nOn to the next");
         System.out.println("Do you want to start again for another day?\nYes or No");
         startAgain = userInput4.nextLine();
@@ -299,13 +300,8 @@ public class FootprintTracker {
         System.out.println();
         System.out.println("Actual emmission: " + totalActualEmissions + "\nEmmission with recommended mode: " + totalRecommendedEmissions);
         System.out.println();
-<<<<<<< HEAD
         //System.out.println("The total amount of emissions saved is: " + (totalActualEmissions - totalRecommendedEmissions) + " kg of CO2");
         
-=======
-        System.out.println("The total amount of emissions saved is: " + (totalActualEmissions - totalRecommendedEmissions) + " kg of CO2");
-
->>>>>>> 51dab99f1846ad5496625cb1998503c4b4245c0f
     
     }
     catch (FileNotFoundException e)
