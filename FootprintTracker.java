@@ -25,6 +25,8 @@ public class FootprintTracker {
         double totalRecommendedEmissions=0;
 
         String startAgain;
+        Scanner userInput= new Scanner(System.in);
+        Scanner userInput2 = new Scanner(System.in);
         Scanner userInput4 = new Scanner(System.in);
         do{
         Scanner inputStream = new Scanner (new File("Places.csv")); 
@@ -86,7 +88,6 @@ public class FootprintTracker {
         System.out.println("\n" + "Lets get started. " +  "\n");
         do 
         {
-            Scanner userInput= new Scanner(System.in);
             System.out.print("Please enter your origin: ");
             origin = userInput.nextLine();
             
@@ -103,7 +104,6 @@ public class FootprintTracker {
         //asking user to enter their destitnation location
         String destination;
         do {
-            Scanner userInput2 = new Scanner(System.in);
             System.out.print("Enter your destination: ");
             destination = userInput2.nextLine();
             while(destination.equals(origin)){
@@ -304,13 +304,13 @@ public class FootprintTracker {
         }
         }while(startAgain.equalsIgnoreCase("Yes"));
 
-
+    
         
 
         System.out.println("Actual emmission: " + totalActualEmissions + "\nEmmission with recommended mode: " + totalRecommendedEmissions);
         System.out.println();
         //System.out.println("The total amount of emissions saved is: " + (totalActualEmissions - totalRecommendedEmissions) + " kg of CO2");
-        
+        userInput.close();
     
     }
     catch (FileNotFoundException e)
