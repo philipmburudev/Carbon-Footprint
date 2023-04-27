@@ -64,19 +64,6 @@ public class ModesOfTransport{
         this.minDistanceCovered = minDistanceCovered;
     }
 
-  
-
-//calculate the distance between two cities
-    // int accra = 0;
-    // int kumasi = 200;
-    // int distance;
-    // int bicycle;
-    
-     
-    // public int distance(){
-    //     distance = kumasi - accra;
-    //     return distance;
-    // }
 
 
     //method to calculate the emission
