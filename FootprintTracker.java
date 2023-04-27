@@ -24,7 +24,9 @@ public class FootprintTracker {
         String startAgain;
         Scanner userInput= new Scanner(System.in);
         Scanner userInput2 = new Scanner(System.in);
+
         Scanner userInput3 = new Scanner(System.in);
+
         Scanner userInput4 = new Scanner(System.in);
 
 
@@ -88,9 +90,9 @@ public class FootprintTracker {
 
         //asking user to enter their origin location
         String origin;
-        System.out.println("\n" + "Lets get started!! " +  "\n");
-    
-        do{
+        System.out.println("\n" + "Lets get started. " +  "\n");
+        do 
+        {
             System.out.print("Please enter your origin: ");
             origin = userInput.nextLine();
             
@@ -307,19 +309,28 @@ public class FootprintTracker {
         inputStream.close();
 
         }while(startAgain.equalsIgnoreCase("Yes"));
-
         
       
         userInput.close();
         userInput2.close();
         userInput3.close();
         userInput4.close();
+<<<<<<< HEAD
+        
+
+        
+        System.out.println("\n" + "Actual emmission: " + totalActualEmissions + "\nEmmission with recommended mode: " + totalRecommendedEmissions);
+        System.out.println();
+        //System.out.println("The total amount of emissions saved is: " + (totalActualEmissions - totalRecommendedEmissions) + " kg of CO2");
+        userInput.close();
+=======
 
 
         System.out.println("\n" + "Actual emmission: " + totalActualEmissions + "\nEmmission with recommended mode: " + totalRecommendedEmissions);
         System.out.println();
         System.out.println("The total amount of emissions saved is: " + (totalActualEmissions - totalRecommendedEmissions) + " kg of CO2");
         
+>>>>>>> 671102b263244d401e1291138b04b47098797e1a
     
     }
     catch (FileNotFoundException e)

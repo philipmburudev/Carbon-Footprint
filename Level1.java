@@ -1,6 +1,5 @@
-
-
 //declaring the class Level1 and its instance variables. Level1 inherits from ModesOfTransport
+
 public class Level1 extends ModesOfTransport{
 
 
