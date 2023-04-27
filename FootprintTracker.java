@@ -23,7 +23,7 @@ public class FootprintTracker {
 
         double totalActualEmissions=0;
         double totalRecommendedEmissions=0;
-        
+
         String startAgain;
         Scanner userInput4 = new Scanner(System.in);
         do{
