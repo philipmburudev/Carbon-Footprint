@@ -12,8 +12,6 @@ import java.util.ArrayList;
 public class FootprintTracker {
 
     static final int MAXIMUMUM_NUMBER_OF_LOCATIONS=20;
-
-    public FootprintTracker(){}
   
     
     //main method
