@@ -11,8 +11,6 @@ public class Level1 extends ModesOfTransport{
     }
 
     
-     
-   
     public void setEmissionPerMile(double emissionPerMile){
         this.emissionPerMile = emissionPerMile;
     }

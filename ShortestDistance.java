@@ -25,6 +25,7 @@ public class ShortestDistance
 
         double distance= 211;
 
+
         ModesOfTransport recommendedModeOfTransport;
         ModesOfTransport intendedModeOfTransport;
 
@@ -157,9 +158,10 @@ public class ShortestDistance
             }
         }
 
-       double totalActualEmissions=0;
-       double totalRecommendedEmissions=0;
+      
 
+        double totalActualEmissions=0;
+        double totalRecommendedEmissions=0;
         for (int i = 0; i < actualEmissionsList.size(); i++) {
             totalActualEmissions+=actualEmissionsList.get(i);
 
