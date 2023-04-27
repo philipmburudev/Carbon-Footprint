@@ -2,21 +2,24 @@ import java.lang.Math;
 import java.util.List;
 import java.util.ArrayList;
 
-public class ShortestDistance 
-{
+public class ShortestDistance {
     
     public static void main(String args[]){
         
 
+        //creating objects of Level1 class
         Level1 bicycle = new Level1("Bicycle",0);
         Level1 walking = new Level1("Walking",0);
         Level1 scooter = new Level1("Scooter",0);
 
 
+        //creating objects of Level2 class
         Level2 motorbike = new Level2("Motorbike",0.18);
         Level2 bus = new Level2("Bus",0.29);
         Level2 car = new Level2("Car",0.17);
  
+
+        //creating objects of Level3 class
         Level3 train = new Level3("Train",0.17);
         Level3 ship = new Level3("Ship",193.066);
         Level3 airplane = new Level3("Airplane",0.42);
@@ -26,16 +29,19 @@ public class ShortestDistance
         double distance= 211;
 
 
+        //
         ModesOfTransport recommendedModeOfTransport;
         ModesOfTransport intendedModeOfTransport;
-
         double percentageOfEmissionsSaved=0;
 
+
+        //creating arraylists to store the emissions for each mode of transport
         List<Double> actualEmissionsList = new ArrayList<Double>();
         List<Double> recommendedEmissionsList = new ArrayList<Double>();
 
 
 
+        //checking the mode of transport entered by the user and assigning the object of that class to the variable intendedModeOfTranspor
         if (modeName.equalsIgnoreCase("bicycle"))
         {
             intendedModeOfTransport=bicycle;

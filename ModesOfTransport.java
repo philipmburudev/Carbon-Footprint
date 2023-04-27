@@ -1,7 +1,7 @@
 import javax.print.attribute.standard.Destination;
 import java.lang.Math;
 
-
+//declaring the class ModesOfTransport and its instance variables
 public class ModesOfTransport{
     protected String modeName;
     protected double emissionPerMile;
@@ -72,6 +72,8 @@ public class ModesOfTransport{
         return Math.round(distance*this.emissionPerMile);
     }
 
+
+    //method to find the lowest emitter
     public ModesOfTransport findLowestEmitter(ModesOfTransport mode1,ModesOfTransport mode2, double distanceCovered)
     {
         if(this.computeEmission(distanceCovered)<mode1.computeEmission(distanceCovered) && this.computeEmission(distanceCovered)<mode2.computeEmission(distanceCovered))
@@ -86,9 +88,6 @@ public class ModesOfTransport{
         return mode2;
         
     }
-
-
-
 
 }
 

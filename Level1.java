@@ -1,18 +1,14 @@
-import java.util.Scanner;
 
+
+//declaring the class Level1 and its instance variables. Level1 inherits from ModesOfTransport
 public class Level1 extends ModesOfTransport{
 
 
-    public Level1(){}
-   
+    //constructor to initialize the variables of Level1 class
     public Level1(String modeName, double emissionPerMile)
     {
+        //super keyword is used to call the constructor of the parent class
         super(modeName, emissionPerMile,0 ,5 );
-    }
-
-    
-    public void setEmissionPerMile(double emissionPerMile){
-        this.emissionPerMile = emissionPerMile;
     }
     
 }

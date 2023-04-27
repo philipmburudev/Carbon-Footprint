@@ -24,6 +24,7 @@ public class FootprintTracker {
         Scanner userInput4 = new Scanner(System.in);
         do{
         Scanner inputStream = new Scanner (new File("Places.csv")); 
+    
                
         
         String line = inputStream.nextLine();
