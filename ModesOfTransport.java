@@ -69,7 +69,13 @@ public class ModesOfTransport{
         return Math.round(distance*this.emissionPerMile);
     }
 
-
+    /**
+     * 
+     * @param mode1
+     * @param mode2
+     * @param distanceCovered
+     * @return
+     */
     //method to find the lowest emitter
     public ModesOfTransport findLowestEmitter(ModesOfTransport mode1,ModesOfTransport mode2, double distanceCovered)
     {

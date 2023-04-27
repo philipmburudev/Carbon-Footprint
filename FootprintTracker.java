@@ -316,14 +316,9 @@ public class FootprintTracker {
         userInput4.close();
 
 
-
-
-        
-
-        
         System.out.println("\n" + "Actual emmission: " + totalActualEmissions + "\nEmmission with recommended mode: " + totalRecommendedEmissions);
         System.out.println();
-        //System.out.println("The total amount of emissions saved is: " + (totalActualEmissions - totalRecommendedEmissions) + " kg of CO2");
+        System.out.println("The total amount of emissions saved is: " + (totalActualEmissions - totalRecommendedEmissions) + " kg of CO2");
         
     
     }
