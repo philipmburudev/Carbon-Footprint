@@ -107,6 +107,8 @@ public class FootprintTracker {
         for(int i=0;i<locationName.length;i++){
             System.out.println(locationName[i]);
         }
+        System.out.println("---------------------------------------------------------------------------------");
+
         //asking user to enter their origin location
         String origin;
         System.out.println("\n" + "Lets get started!! " +  "\n");
