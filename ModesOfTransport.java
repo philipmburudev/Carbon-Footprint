@@ -9,10 +9,6 @@ public class ModesOfTransport{
     protected double minDistanceCovered;
   
 
-    //default constructor for creating an object
-    public ModesOfTransport(){};
-
-
     //constructor to initialize the variables
     public ModesOfTransport(String modeName, double emissionPerMile,double minDistanceCovered,double maxDistanceCovered)
     {
