@@ -306,7 +306,7 @@ public class FootprintTracker {
         System.out.println("Cannot find file");
     }
     catch(NumberFormatException b){
-        System.out.println("The input of a number is invalid");
+        System.out.println("The input is invalid");
     }
         
 }
