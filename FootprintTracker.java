@@ -20,6 +20,10 @@ public class FootprintTracker {
     public static void main(String args[]){
     try
     {
+
+        double totalActualEmissions=0;
+        double totalRecommendedEmissions=0;
+
         String startAgain;
         Scanner userInput4 = new Scanner(System.in);
         do{
@@ -284,7 +288,14 @@ public class FootprintTracker {
             }
         }
 
+
         System.out.println();
+        for (int i = 0; i < actualEmissionsList.size(); i++) {
+            totalActualEmissions+=actualEmissionsList.get(i);
+
+            totalRecommendedEmissions+=recommendedEmissionsList.get(i);
+        } 
+
         System.out.println("This is the end for this set\nOn to the next");
         System.out.println("Do you want to start again for another day?\nYes or No");
         startAgain = userInput4.nextLine();
@@ -296,9 +307,7 @@ public class FootprintTracker {
 
 
         
-        double totalActualEmissions=0;
-        double totalRecommendedEmissions=0;
-        System.out.println();
+
         System.out.println("Actual emmission: " + totalActualEmissions + "\nEmmission with recommended mode: " + totalRecommendedEmissions);
         System.out.println();
         //System.out.println("The total amount of emissions saved is: " + (totalActualEmissions - totalRecommendedEmissions) + " kg of CO2");
