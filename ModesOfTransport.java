@@ -1,4 +1,3 @@
-import javax.print.attribute.standard.Destination;
 import java.lang.Math;
 
 //declaring the class ModesOfTransport and its instance variables
