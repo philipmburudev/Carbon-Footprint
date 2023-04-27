@@ -1,13 +1,55 @@
 import java.util.Scanner;
-import java.io.FileWriter;  
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.io.File;
-import java.lang.StringBuilder;
-import javax.lang.model.util.Elements.Origin;
 import java.util.List;
 import java.util.ArrayList;
+
+
+/**
+ * 
+ * This program calculates the carbon footprint of a user's journey from one location to another.
+ * The user is asked to input their origin, destination and mode of transport.
+ * The program then calculates the distance between the two locations using their longitudes and latitudes.
+ * The program then calculates the carbon footprint of the journey using the distance and the mode of transport.
+ * The program then recommends a more sustainable mode of transport if the user's mode of transport is not sustainable.
+ * The program then asks the user if they want to start again.
+ * 
+ * @author Freda Marie, Aaron Obodai, Philip Mburu
+ * 
+ * 
+ * 
+ * @param args
+ * @param MAXIMUMUM_NUMBER_OF_LOCATIONS
+ * @param totalActualEmissions
+ * @param totalRecommendedEmissions
+ * @param startAgain
+ * @param userInput
+ * @param userInput2
+ * @param userInput3
+ * @param userInput4
+ * @param inputStream
+ * @param line
+ * @param locationName
+ * @param locationLongitude
+ * @param locationLatitude
+ * @param numberOfLocationss
+ * @param locationsStringType
+ * @param origin
+ * @param destination
+ * @param modeName
+ * @param bicycle
+ * @param walking
+ * @param scooter
+ * @param motorbike
+ * @param bus
+ * @param car
+ * @pa
+ * 
+ * @throws FileNotFoundException
+ * @throws IOException
+ */
+
+
 
 public class FootprintTracker {
     static final int MAXIMUMUM_NUMBER_OF_LOCATIONS=20;
