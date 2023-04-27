@@ -23,7 +23,8 @@ public class FootprintTracker {
         String startAgain;
         Scanner userInput4 = new Scanner(System.in);
         do{
-        Scanner inputStream = new Scanner (new File("Places.csv"));         
+        Scanner inputStream = new Scanner (new File("Places.csv")); 
+               
         
         String line = inputStream.nextLine();
         String[] locationName= new String[MAXIMUMUM_NUMBER_OF_LOCATIONS];
@@ -217,6 +218,7 @@ public class FootprintTracker {
                     System.out.println("The mode of transport we recommend you use is "+ recommendedModeOfTransport.getModeName());
                     System.out.println();
                     System.out.println("With this mode of transport"+recommendedModeOfTransport.getModeName()+", you will reduce carbon emissions by " +percentageOfEmissionsSaved + " %");
+                    System.out.println();
             }
         }else if (distance>5 && distance<=200)
         {
@@ -292,11 +294,18 @@ public class FootprintTracker {
 
 
         
+        double totalActualEmissions=0;
+        double totalRecommendedEmissions=0;
         System.out.println();
-        //System.out.println("Actual emmission: " + totalActualEmissions + "\nEmmission with recommended mode: " + totalRecommendedEmissions);
+        System.out.println("Actual emmission: " + totalActualEmissions + "\nEmmission with recommended mode: " + totalRecommendedEmissions);
         System.out.println();
+<<<<<<< HEAD
         //System.out.println("The total amount of emissions saved is: " + (totalActualEmissions - totalRecommendedEmissions) + " kg of CO2");
         
+=======
+        System.out.println("The total amount of emissions saved is: " + (totalActualEmissions - totalRecommendedEmissions) + " kg of CO2");
+
+>>>>>>> 51dab99f1846ad5496625cb1998503c4b4245c0f
     
     }
     catch (FileNotFoundException e)
