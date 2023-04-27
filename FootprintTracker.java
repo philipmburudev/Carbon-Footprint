@@ -90,10 +90,9 @@ public class FootprintTracker {
                 System.out.println("Invalid input! Please enter a valid location.");
                 origin = userInput.nextLine();
             }
-            userInput.close();
         } while (origin.matches("\\d+"));
         System.out.println();
-
+        
 
 
         //asking user to enter their destitnation location
@@ -110,7 +109,6 @@ public class FootprintTracker {
                 System.out.println("Invalid input! Please enter a valid location.");
                 destination = userInput2.nextLine();
             }
-            userInput2.close();
         } while (destination.matches("\\d+"));
         System.out.println();
         
@@ -126,7 +124,7 @@ public class FootprintTracker {
             if (modeName.matches("\\d+")) {
                 System.out.println("Invalid mode of transport. Please enter a valid mode of transport.");
             }
-            userInput3.close();
+
         } while (modeName.matches("\\d+"));
         System.out.println();
 
@@ -291,14 +289,14 @@ public class FootprintTracker {
             startAgain = userInput4.nextLine();
         }
         }while(startAgain.equalsIgnoreCase("Yes"));
-        userInput4.close();
+
 
         
         System.out.println();
         //System.out.println("Actual emmission: " + totalActualEmissions + "\nEmmission with recommended mode: " + totalRecommendedEmissions);
         System.out.println();
         //System.out.println("The total amount of emissions saved is: " + (totalActualEmissions - totalRecommendedEmissions) + " kg of CO2");
-
+        
     
     }
     catch (FileNotFoundException e)
