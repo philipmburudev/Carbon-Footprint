@@ -66,7 +66,8 @@ public class FootprintTracker {
             locationLongitude[numberOfLocationss]=Double.parseDouble(locationsStringType[2]) ;
             numberOfLocationss++;            
         }
-        
+        System.out.println("---------------------------------------------------------------------------------");
+
         System.out.println("\n" + "Hello! This is Footprint Forward, here to help you implement sustainable practices in your daily life.");
         System.out.println("To start, you will have to input your origin, destination, and mode of transport you intend to use.\n");
     
