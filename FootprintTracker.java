@@ -10,7 +10,6 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class FootprintTracker {
-
     static final int MAXIMUMUM_NUMBER_OF_LOCATIONS=20;
   
     
@@ -23,7 +22,13 @@ public class FootprintTracker {
         double totalRecommendedEmissions=0;
 
         String startAgain;
+        Scanner userInput= new Scanner(System.in);
+        Scanner userInput2 = new Scanner(System.in);
+        Scanner userInput3 = new Scanner(System.in);
         Scanner userInput4 = new Scanner(System.in);
+
+
+
         do{
         Scanner inputStream = new Scanner (new File("Places.csv")); 
     
@@ -85,9 +90,7 @@ public class FootprintTracker {
         String origin;
         System.out.println("\n" + "Lets get started!! " +  "\n");
     
-        do 
-        {
-            Scanner userInput= new Scanner(System.in);
+        do{
             System.out.print("Please enter your origin: ");
             origin = userInput.nextLine();
             
@@ -104,7 +107,6 @@ public class FootprintTracker {
         //asking user to enter their destitnation location
         String destination;
         do {
-            Scanner userInput2 = new Scanner(System.in);
             System.out.print("Enter your destination: ");
             destination = userInput2.nextLine();
             while(destination.equals(origin)){
@@ -123,7 +125,6 @@ public class FootprintTracker {
         //asking user to enter the mode of transport they want to use
         String modeName;
         do {
-            Scanner userInput3 = new Scanner(System.in);
             System.out.print("Enter the mode of transportation you want to use: ");
             modeName = userInput3.nextLine();
             
@@ -303,12 +304,24 @@ public class FootprintTracker {
             System.out.println("Your answer is not valid. Answer again");
             startAgain = userInput4.nextLine();
         }
+        inputStream.close();
+
         }while(startAgain.equalsIgnoreCase("Yes"));
+
+        
+      
+        userInput.close();
+        userInput2.close();
+        userInput3.close();
+        userInput4.close();
+
+
 
 
         
 
-        System.out.println("Actual emmission: " + totalActualEmissions + "\nEmmission with recommended mode: " + totalRecommendedEmissions);
+        
+        System.out.println("\n" + "Actual emmission: " + totalActualEmissions + "\nEmmission with recommended mode: " + totalRecommendedEmissions);
         System.out.println();
         //System.out.println("The total amount of emissions saved is: " + (totalActualEmissions - totalRecommendedEmissions) + " kg of CO2");
         
