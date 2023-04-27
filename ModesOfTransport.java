@@ -1,7 +1,9 @@
 import java.lang.Math;
 
-//declaring the class ModesOfTransport and its instance variables
-public class ModesOfTransport{
+/**
+ * Represents a mode of transportation and its emissions and minimum and maximum distance covered.
+ */
+    public class ModesOfTransport{
     protected String transportMode;
     protected double emissionPerMile;
     protected double maxDistanceCovered;
@@ -18,52 +20,78 @@ public class ModesOfTransport{
         this.minDistanceCovered=minDistanceCovered;
     }
 
-    //method to get the mode name
+    /**
+     * Returns the name of the transportation mode.
+     * @return the name of the transportation mode
+     */
     public String getTransportMode() {
         return transportMode;
         
     }
-
-    //method to set the mode name
+    /**
+     * Sets the name of the transportation mode.
+     * @param transportMode the name of the transportation mode
+     */
     public void settransportMode(String transportMode) {
         this.transportMode = transportMode;
     }
 
-    //method to get the emission per mile
+    /**
+     * Returns the emissions per mile of the transportation mode.
+     * @return the emissions per mile of the transportation mode
+     */
     public double getEmissionPerMile() {
         return emissionPerMile;
     }
 
-    //method to set the emission per mile
+    /**
+     * Sets the emissions per mile of the transportation mode.
+     * @param emissionPerMile the emissions per mile of the transportation mode
+     */
     public void setEmissionPerMile(double emissionPerMile) {
         this.emissionPerMile = emissionPerMile;
     }
 
-    //method to get the maximum distance covered
+
+    /**
+     * Returns the maximum distance that can be covered by the transportation mode.
+     * @return the maximum distance that can be covered by the transportation mode
+     */
     public double getMaxDistanceCovered() {
         return maxDistanceCovered;
     }
 
-    //method to set the maximum distance covered
+
+   /**
+     * Sets the maximum distance that can be covered by the transportation mode.
+     * @param maxDistanceCovered the maximum distance that can be covered by the transportation mode
+     */
     public void setMaxDistanceCovered(double maxDistanceCovered) {
         this.maxDistanceCovered = maxDistanceCovered;
     }
 
 
-    
-    //method to get the minimum distance covered
+    /**
+     * Returns the minimum distance that can be covered by the transportation mode.
+     * @return the minimum distance that can be covered by the transportation mode
+     */    
     public double getMinDistanceCovered() {
         return minDistanceCovered;
     }
 
-    //method to set the minimum distance covered
+    /**
+     * Sets the minimum distance that can be covered by the transportation mode.
+     * @param minDistanceCovered the minimum distance that can be covered by the transportation mode
+     */
     public void setMinDistanceCovered(double minDistanceCovered) {
         this.minDistanceCovered = minDistanceCovered;
     }
 
-
-
-    //method to calculate the emission
+    /**
+     * Calculates the emissions for a given distance.
+     * @param distance the distance traveled
+     * @return the emissions for the given distance
+     */
     public double computeEmission(double distance)
     {
         return Math.round(distance*this.emissionPerMile);
@@ -71,12 +99,11 @@ public class ModesOfTransport{
 
     /**
      * Finds the transportation mode that emits the least amount of emissions for a given distance.
-     * @param mode1
-     * @param mode2
-     * @param distanceCovered
-     * @return
+     * @param mode1 A mode of transport which will vary depending on the level
+     * @param mode2 A mode of transport which will vary depending on the level
+     * @param distanceCovered The distance to be covered by the user depending on the locations they specified
+     * @return The mode of transport that emits the least emissions
      */
-    //method to find the lowest emitter
     public ModesOfTransport findLowestEmitter(ModesOfTransport mode1,ModesOfTransport mode2, double distanceCovered)
     {
         if(this.computeEmission(distanceCovered)<mode1.computeEmission(distanceCovered) && this.computeEmission(distanceCovered)<mode2.computeEmission(distanceCovered))
