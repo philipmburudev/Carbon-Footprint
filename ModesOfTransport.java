@@ -70,7 +70,7 @@ public class ModesOfTransport{
     }
 
     /**
-     * 
+     * Finds the transportation mode that emits the least amount of emissions for a given distance.
      * @param mode1
      * @param mode2
      * @param distanceCovered
