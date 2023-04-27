@@ -88,6 +88,11 @@ public class FootprintTracker {
                                                                        );
         System.out.println();
 
+
+        System.out.println("The locations which are available are:");
+        for(int i=0;i<locationName.length;i++){
+            System.out.println(locationName[i]);
+        }
         //asking user to enter their origin location
         String origin;
         System.out.println("\n" + "Lets get started. " +  "\n");
@@ -100,6 +105,12 @@ public class FootprintTracker {
             {
                 System.out.println("Invalid input! Please enter a valid location.");
                 origin = userInput.nextLine();
+            }
+            for(int i=0;i<locationName.length;i++){
+                while(!origin.equals(locationName[i])){
+                    System.out.println("This is not in the list of locations.\nEnter another origin");
+                    origin = userInput.nextLine();
+                }
             }
         } while (origin.matches("\\d+"));
         System.out.println();
@@ -119,6 +130,12 @@ public class FootprintTracker {
                 System.out.println("Invalid input! Please enter a valid location.");
                 destination = userInput2.nextLine();
             }
+            for(int i=0;i<locationName.length;i++){
+                while(!destination.equals(locationName[i])){
+                    System.out.println("This is not in the list of locations.\nEnter another destination");
+                    destination = userInput2.nextLine();
+                }
+            }
         } while (destination.matches("\\d+"));
         System.out.println();
         
@@ -133,7 +150,7 @@ public class FootprintTracker {
             if (modeName.matches("\\d+")) {
                 System.out.println("Invalid mode of transport. Please enter a valid mode of transport.");
             }
-
+            
         } while (modeName.matches("\\d+"));
         System.out.println();
 
@@ -336,7 +353,9 @@ public class FootprintTracker {
     catch(NumberFormatException b){
         System.out.println("The input is invalid");
     }
-        
+    catch(IOException d){
+        System.out.println("The input is not in the file");
+    }        
 
 }
 
