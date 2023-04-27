@@ -1,35 +1,32 @@
-import javax.print.attribute.standard.Destination;
 import java.lang.Math;
 
-
+//declaring the class ModesOfTransport and its instance variables
 public class ModesOfTransport{
-    protected String modeName;
+    protected String transportMode;
     protected double emissionPerMile;
     protected double maxDistanceCovered;
     protected double minDistanceCovered;
   
 
-    //default constructor for creating an object
-    public ModesOfTransport(){};
-
-
     //constructor to initialize the variables
-    public ModesOfTransport(String modeName, double emissionPerMile,double minDistanceCovered,double maxDistanceCovered)
+    public ModesOfTransport(String transportMode, double emissionPerMile,double minDistanceCovered,double maxDistanceCovered)
     {
-        this.modeName=modeName;
+
+        this.transportMode=transportMode;
         this.emissionPerMile=emissionPerMile;
         this.maxDistanceCovered=maxDistanceCovered;
         this.minDistanceCovered=minDistanceCovered;
     }
 
     //method to get the mode name
-    public String getModeName() {
-        return modeName;
+    public String getTransportMode() {
+        return transportMode;
+        
     }
 
     //method to set the mode name
-    public void setModeName(String modeName) {
-        this.modeName = modeName;
+    public void settransportMode(String transportMode) {
+        this.transportMode = transportMode;
     }
 
     //method to get the emission per mile
@@ -72,6 +69,8 @@ public class ModesOfTransport{
         return Math.round(distance*this.emissionPerMile);
     }
 
+
+    //method to find the lowest emitter
     public ModesOfTransport findLowestEmitter(ModesOfTransport mode1,ModesOfTransport mode2, double distanceCovered)
     {
         if(this.computeEmission(distanceCovered)<mode1.computeEmission(distanceCovered) && this.computeEmission(distanceCovered)<mode2.computeEmission(distanceCovered))
@@ -86,9 +85,6 @@ public class ModesOfTransport{
         return mode2;
         
     }
-
-
-
 
 }
 
