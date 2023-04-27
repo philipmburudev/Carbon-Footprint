@@ -74,7 +74,7 @@ public class ModesOfTransport{
      * @param mode1 A mode of transport which will vary depending on the level
      * @param mode2 A mode of transport which will vary depending on the level
      * @param distanceCovered The distance to be covered by the user depending on the locations they specified
-     * @return
+     * @return The mode of transport that emits the least emissions
      */
     public ModesOfTransport findLowestEmitter(ModesOfTransport mode1,ModesOfTransport mode2, double distanceCovered)
     {
