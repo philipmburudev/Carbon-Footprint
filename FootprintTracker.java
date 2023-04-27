@@ -105,7 +105,7 @@ public class FootprintTracker {
         System.out.println("\n" + "Lets get started!! " +  "\n");
     
         do{
-            System.out.print("Please enter your origin: ");
+            System.out.print("Please enter your origin: \n");
             origin = userInput.nextLine();
             
             while(origin.matches("\\d+")) 
@@ -119,7 +119,7 @@ public class FootprintTracker {
         //asking user to enter their destitnation location
         String destination;
         do {
-            System.out.print("Enter your destination: ");
+            System.out.print("Enter your destination: \n");
             destination = userInput2.nextLine();
             while(destination.equals(origin)){
                 System.out.println("This has been taken as your origin and cannot be your destination\nTry again with a different destination location");
@@ -135,7 +135,7 @@ public class FootprintTracker {
         //asking user to enter the mode of transport they want to use
         String modeName;
         do {
-            System.out.print("Enter the mode of transportation you want to use: ");
+            System.out.print("Enter the mode of transportation you want to use: \n");
             modeName = userInput3.nextLine();
             
             if (modeName.matches("\\d+")) {
@@ -341,10 +341,10 @@ public class FootprintTracker {
         userInput4.close();
 
         System.out.println("---------------------------------------------------------------------------------");
-        System.out.println("\n" + "Actual emmission: " + totalActualEmissions + "\nEmmission with recommended mode: " + totalRecommendedEmissions);
+        System.out.println("\n" + "For all your trips, the total actual emmissions are: " + totalActualEmissions + "kg of CO2\nFor all your trips, the total recommended emmissions are: " + totalRecommendedEmissions+ "kg of CO2");
         System.out.println();
-        System.out.println("The total amount of emissions saved is: " + (totalActualEmissions - totalRecommendedEmissions) + " kg of CO2");
-        System.out.println("You have saved of " + Math.round(Math.abs(((totalActualEmissions-totalRecommendedEmissions)/totalActualEmissions)*100)) + "% of CO2");
+        System.out.println("The total amount of emissions saved will be: " + (totalActualEmissions - totalRecommendedEmissions) + " kg of CO2/");
+        System.out.println("You will save " + Math.round(Math.abs(((totalActualEmissions-totalRecommendedEmissions)/totalActualEmissions)*100)) + "% of CO2.");
         
     
     }
