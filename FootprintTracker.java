@@ -15,73 +15,47 @@ import java.util.ArrayList;
  * The program then asks the user if they want to start again.
  * 
  * @author Freda Marie, Aaron Obodai, Philip Mburu
- * 
- * 
- * 
+ *  
  * @param args
- * @param MAXIMUMUM_NUMBER_OF_LOCATIONS
- * @param totalActualEmissions
- * @param totalRecommendedEmissions
- * @param startAgain
- * @param userInput
- * @param userInput2
- * @param userInput3
- * @param userInput4
- * @param inputStream
- * @param line
- * @param locationName
- * @param locationLongitude
- * @param locationLatitude
- * @param numberOfLocationss
- * @param locationsStringType
- * @param origin
- * @param destination
- * @param modeName
- * @param bicycle
- * @param walking
- * @param scooter
- * @param motorbike
- * @param bus
- * @param car
- * @param train
- * 
  * @throws FileNotFoundException
  * @throws IOException
  */
 
-
-
 public class FootprintTracker {
     static final int MAXIMUMUM_NUMBER_OF_LOCATIONS=20;
-  
-    
+      
     //main method
     public static void main(String args[]){
     try
     {
-
         double totalActualEmissions=0;
         double totalRecommendedEmissions=0;
 
+        // create a String variable to hold user input for starting again or quitting
         String startAgain;
+
+        // create multiple Scanner objects to get user input from console
         Scanner userInput= new Scanner(System.in);
         Scanner userInput2 = new Scanner(System.in);
         Scanner userInput3 = new Scanner(System.in);
         Scanner userInput4 = new Scanner(System.in);
 
-
-
+        // use a do-while loop to keep the program running until the user quits
         do{
-        Scanner inputStream = new Scanner (new File("Places.csv")); 
-    
-               
-        
+        Scanner inputStream = new Scanner (new File("Places.csv")); // create a new Scanner object to read from the "Places.csv" file
+
+        // read the first line of the file and ignore it (assuming it's a header)
         String line = inputStream.nextLine();
+
+        // create arrays to hold location information
         String[] locationName= new String[MAXIMUMUM_NUMBER_OF_LOCATIONS];
         double[] locationLongitude= new double[MAXIMUMUM_NUMBER_OF_LOCATIONS];
         double[] locationLatitude= new double[MAXIMUMUM_NUMBER_OF_LOCATIONS];
 
+        // keep track of the number of locations read from the file
         int numberOfLocationss=0;
+
+        // loop through the rest of the file and read each location's information
         while (inputStream.hasNextLine())
         {
             line = inputStream.nextLine();
@@ -94,10 +68,7 @@ public class FootprintTracker {
         
         System.out.println("\n" + "Hello! This is Footprint Forward, here to help you implement sustainable practices in your daily life.");
         System.out.println("To start, you will have to input your origin, destination, and mode of transport you intend to use.\n");
-        
-
-        
-
+    
         //creating objects for the different modes of transport
         Level1 bicycle = new Level1("Bicycle",0);
         Level1 walking = new Level1("Walking",0);
@@ -143,9 +114,7 @@ public class FootprintTracker {
             }
         } while (origin.matches("\\d+"));
         System.out.println();
-        
-
-
+    
         //asking user to enter their destitnation location
         String destination;
         do {
@@ -161,9 +130,7 @@ public class FootprintTracker {
             }
         } while (destination.matches("\\d+"));
         System.out.println();
-        
-
-        
+            
         //asking user to enter the mode of transport they want to use
         String modeName;
         do {
