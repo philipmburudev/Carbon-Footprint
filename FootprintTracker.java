@@ -1,13 +1,55 @@
 import java.util.Scanner;
-import java.io.FileWriter;  
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.io.File;
-import java.lang.StringBuilder;
-import javax.lang.model.util.Elements.Origin;
 import java.util.List;
 import java.util.ArrayList;
+
+
+/**
+ * 
+ * This program calculates the carbon footprint of a user's journey from one location to another.
+ * The user is asked to input their origin, destination and mode of transport.
+ * The program then calculates the distance between the two locations using their longitudes and latitudes.
+ * The program then calculates the carbon footprint of the journey using the distance and the mode of transport.
+ * The program then recommends a more sustainable mode of transport if the user's mode of transport is not sustainable.
+ * The program then asks the user if they want to start again.
+ * 
+ * @author Freda Marie, Aaron Obodai, Philip Mburu
+ * 
+ * 
+ * 
+ * @param args
+ * @param MAXIMUMUM_NUMBER_OF_LOCATIONS
+ * @param totalActualEmissions
+ * @param totalRecommendedEmissions
+ * @param startAgain
+ * @param userInput
+ * @param userInput2
+ * @param userInput3
+ * @param userInput4
+ * @param inputStream
+ * @param line
+ * @param locationName
+ * @param locationLongitude
+ * @param locationLatitude
+ * @param numberOfLocationss
+ * @param locationsStringType
+ * @param origin
+ * @param destination
+ * @param modeName
+ * @param bicycle
+ * @param walking
+ * @param scooter
+ * @param motorbike
+ * @param bus
+ * @param car
+ * @param train
+ * 
+ * @throws FileNotFoundException
+ * @throws IOException
+ */
+
+
 
 public class FootprintTracker {
     static final int MAXIMUMUM_NUMBER_OF_LOCATIONS=20;
@@ -24,9 +66,7 @@ public class FootprintTracker {
         String startAgain;
         Scanner userInput= new Scanner(System.in);
         Scanner userInput2 = new Scanner(System.in);
-
         Scanner userInput3 = new Scanner(System.in);
-
         Scanner userInput4 = new Scanner(System.in);
 
 
@@ -90,9 +130,9 @@ public class FootprintTracker {
 
         //asking user to enter their origin location
         String origin;
-        System.out.println("\n" + "Lets get started. " +  "\n");
-        do 
-        {
+        System.out.println("\n" + "Lets get started!! " +  "\n");
+    
+        do{
             System.out.print("Please enter your origin: ");
             origin = userInput.nextLine();
             
@@ -309,24 +349,24 @@ public class FootprintTracker {
         inputStream.close();
 
         }while(startAgain.equalsIgnoreCase("Yes"));
+
         
       
         userInput.close();
         userInput2.close();
         userInput3.close();
         userInput4.close();
+
+
+
+
         
 
         
         System.out.println("\n" + "Actual emmission: " + totalActualEmissions + "\nEmmission with recommended mode: " + totalRecommendedEmissions);
         System.out.println();
         //System.out.println("The total amount of emissions saved is: " + (totalActualEmissions - totalRecommendedEmissions) + " kg of CO2");
-        userInput.close();
-
-
-        System.out.println("\n" + "Actual emmission: " + totalActualEmissions + "\nEmmission with recommended mode: " + totalRecommendedEmissions);
-        System.out.println();
-        System.out.println("The total amount of emissions saved is: " + (totalActualEmissions - totalRecommendedEmissions) + " kg of CO2");
+        
     
     }
     catch (FileNotFoundException e)
