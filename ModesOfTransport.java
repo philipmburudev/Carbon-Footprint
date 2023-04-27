@@ -69,8 +69,13 @@ public class ModesOfTransport{
         return Math.round(distance*this.emissionPerMile);
     }
 
-
-    //method to find the lowest emitter
+    /**
+     * Finds the transportation mode that emits the least amount of emissions for a given distance.
+     * @param mode1 A mode of transport which will vary depending on the level
+     * @param mode2 A mode of transport which will vary depending on the level
+     * @param distanceCovered The distance to be covered by the user depending on the locations they specified
+     * @return The mode of transport that emits the least emissions
+     */
     public ModesOfTransport findLowestEmitter(ModesOfTransport mode1,ModesOfTransport mode2, double distanceCovered)
     {
         if(this.computeEmission(distanceCovered)<mode1.computeEmission(distanceCovered) && this.computeEmission(distanceCovered)<mode2.computeEmission(distanceCovered))

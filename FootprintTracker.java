@@ -43,7 +43,7 @@ import java.util.ArrayList;
  * @param motorbike
  * @param bus
  * @param car
- * @pa
+ * @param train
  * 
  * @throws FileNotFoundException
  * @throws IOException
