@@ -84,25 +84,24 @@ public class ShortestDistance
             if (recommendedModeOfTransport.getModeName().equalsIgnoreCase(modeName))
             {
                 System.out.println("Well done! The mode of transport("+ recommendedModeOfTransport.getModeName()+") you intend to use emits the least greenhouse gases.");
-            }
-            else
+                System.out.println();
+            }else
             {
-                    percentageOfEmissionsSaved= 100;
-                    actualEmissionsList.add(intendedModeOfTransport.computeEmission(distance));
-                    recommendedEmissionsList.add(recommendedModeOfTransport.computeEmission(distance));
-                    System.out.println("The mode of transport we recommend you use is "+ recommendedModeOfTransport.getModeName());
-                    System.out.println("With this mode of transport"+recommendedModeOfTransport.getModeName()+", you will reduce carbon emissions by " +percentageOfEmissionsSaved + " %");
+                percentageOfEmissionsSaved= 100;
+                actualEmissionsList.add(intendedModeOfTransport.computeEmission(distance));
+                recommendedEmissionsList.add(recommendedModeOfTransport.computeEmission(distance));
+                    
+                System.out.println("The mode of transport we recommend you use is "+ recommendedModeOfTransport.getModeName());
+                System.out.println("With this mode of transport"+recommendedModeOfTransport.getModeName()+", you will reduce carbon emissions by " +percentageOfEmissionsSaved + " %");
             }
-        }
-        else if (distance>5 && distance<=200)
+        }else if (distance>5 && distance<=200)
         {
             recommendedModeOfTransport=motorbike.findLowestEmitter(car, bus, distance);
 
             if (recommendedModeOfTransport.getModeName().equalsIgnoreCase(modeName))
             {
                 System.out.println("Well done! The mode of transport("+ recommendedModeOfTransport.getModeName()+") you intend to use emits the lease greenhouse gases.");
-            }
-            else{
+            }else{
                 if (intendedModeOfTransport != null) 
                 {
                     if(intendedModeOfTransport.computeEmission(distance)>0)
@@ -167,6 +166,7 @@ public class ShortestDistance
 
             totalRecommendedEmissions+=recommendedEmissionsList.get(i);
         }
-        System.out.println("actual: "+totalActualEmissions+" \nrecommended: "+ totalRecommendedEmissions);
+        System.out.println();
+        System.out.println("Actual Emmission: "+totalActualEmissions+" \nRecommended Emmission: "+ totalRecommendedEmissions+ "\n");
     }
 }

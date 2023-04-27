@@ -219,6 +219,7 @@ public class FootprintTracker {
                     System.out.println("The mode of transport we recommend you use is "+ recommendedModeOfTransport.getModeName());
                     System.out.println();
                     System.out.println("With this mode of transport"+recommendedModeOfTransport.getModeName()+", you will reduce carbon emissions by " +percentageOfEmissionsSaved + " %");
+                    System.out.println();
             }
         }else if (distance>5 && distance<=200)
         {
