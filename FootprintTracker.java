@@ -83,7 +83,8 @@ public class FootprintTracker {
 
         //asking user to enter their origin location
         String origin;
-        System.out.println("\n" + "Lets get started. " +  "\n");
+        System.out.println("\n" + "Lets get started!! " +  "\n");
+    
         do 
         {
             Scanner userInput= new Scanner(System.in);

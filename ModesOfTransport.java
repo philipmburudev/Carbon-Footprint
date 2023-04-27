@@ -25,13 +25,8 @@ public class ModesOfTransport{
     }
 
     //method to set the mode name
-<<<<<<< HEAD
     public void settransportMode(String modeName) {
         this.transportMode = modeName;
-=======
-    public void setTransportMode(String transportMode) {
-        this.transportMode = transportMode;
->>>>>>> 9e5435ad54cfb69e52ee6022d86d3d7d94d60262
     }
 
     //method to get the emission per mile
