@@ -56,27 +56,27 @@ public class FootprintTracker {
         Level1 scooter = new Level1("Scooter",0);
         System.out.println();
 
-        System.out.println("The modes of transport in level 1 are: \n" + scooter.getModeName()+"\n"
-                                                                       + bicycle.getModeName()+"\n"
-                                                                       + walking.getModeName()
+        System.out.println("The modes of transport in level 1 are: \n" + scooter.getTransportMode()+"\n"
+                                                                       + bicycle.getTransportMode()+"\n"
+                                                                       + walking.getTransportMode()
                                                                        );
 
         Level2 motorbike = new Level2("Motorbike",0.4);
         Level2 bus = new Level2("Bus",0.68);
         Level2 car = new Level2("Car",0.89);
         System.out.println();
-        System.out.println("The modes of transport in level 2 are: \n" + motorbike.getModeName()+"\n"
-                                                                       + bus.getModeName()      +"\n"
-                                                                       + car.getModeName()
+        System.out.println("The modes of transport in level 2 are: \n" + motorbike.getTransportMode()+"\n"
+                                                                       + bus.getTransportMode()      +"\n"
+                                                                       + car.getTransportMode()
                                                                        );
 
         Level3 train = new Level3("Train",0.17);
         Level3 ship = new Level3("Ship",193.066);
         Level3 airplane = new Level3("Airplane",0.42);
         System.out.println();
-        System.out.println("The modes of transport in level 3 are: \n" + train.getModeName()+"\n"
-                                                                       + ship.getModeName() +"\n"
-                                                                       + airplane.getModeName()
+        System.out.println("The modes of transport in level 3 are: \n" + train.getTransportMode()+"\n"
+                                                                       + ship.getTransportMode() +"\n"
+                                                                       + airplane.getTransportMode()
                                                                        );
         System.out.println();
 
@@ -211,25 +211,25 @@ public class FootprintTracker {
         {
             recommendedModeOfTransport=walking.findLowestEmitter(scooter, bicycle, distance);
 
-            if (recommendedModeOfTransport.getModeName().equalsIgnoreCase(modeName)){
-                System.out.println("Well done! The mode of transport("+ recommendedModeOfTransport.getModeName()+") you intend to use emits the least greenhouse gases.");
+            if (recommendedModeOfTransport.getTransportMode().equalsIgnoreCase(modeName)){
+                System.out.println("Well done! The mode of transport("+ recommendedModeOfTransport.getTransportMode()+") you intend to use emits the least greenhouse gases.");
             }else
             {
                     percentageOfEmissionsSaved= 100;
                     actualEmissionsList.add(intendedModeOfTransport.computeEmission(distance));
                     recommendedEmissionsList.add(recommendedModeOfTransport.computeEmission(distance));
-                    System.out.println("The mode of transport we recommend you use is "+ recommendedModeOfTransport.getModeName());
+                    System.out.println("The mode of transport we recommend you use is "+ recommendedModeOfTransport.getTransportMode());
                     System.out.println();
-                    System.out.println("With this mode of transport"+recommendedModeOfTransport.getModeName()+", you will reduce carbon emissions by " +percentageOfEmissionsSaved + " %");
+                    System.out.println("With this mode of transport"+recommendedModeOfTransport.getTransportMode()+", you will reduce carbon emissions by " +percentageOfEmissionsSaved + " %");
                     System.out.println();
             }
         }else if (distance>5 && distance<=200)
         {
             recommendedModeOfTransport=motorbike.findLowestEmitter(car, bus, distance);
 
-            if (recommendedModeOfTransport.getModeName().equalsIgnoreCase(modeName))
+            if (recommendedModeOfTransport.getTransportMode().equalsIgnoreCase(modeName))
             {
-                System.out.println("Well done! The mode of transport("+ recommendedModeOfTransport.getModeName()+") you intend to use emits the lease greenhouse gases.");
+                System.out.println("Well done! The mode of transport("+ recommendedModeOfTransport.getTransportMode()+") you intend to use emits the lease greenhouse gases.");
             }
             else{
                 if (intendedModeOfTransport != null) 
@@ -239,12 +239,12 @@ public class FootprintTracker {
                         percentageOfEmissionsSaved= Math.round(Math.abs(((intendedModeOfTransport.computeEmission(distance)-recommendedModeOfTransport.computeEmission(distance))/intendedModeOfTransport.computeEmission(distance))*100));
                         actualEmissionsList.add(intendedModeOfTransport.computeEmission(distance));
                         recommendedEmissionsList.add(recommendedModeOfTransport.computeEmission(distance));
-                        System.out.println("The mode of transport we recommend you use is "+ recommendedModeOfTransport.getModeName());
-                        System.out.println("With this mode of transport "+recommendedModeOfTransport.getModeName()+", you will reduce carbon emissions by " +percentageOfEmissionsSaved + " %");
+                        System.out.println("The mode of transport we recommend you use is "+ recommendedModeOfTransport.getTransportMode());
+                        System.out.println("With this mode of transport "+recommendedModeOfTransport.getTransportMode()+", you will reduce carbon emissions by " +percentageOfEmissionsSaved + " %");
 
                     }
                     else{
-                        System.out.println("Well done! The mode of transport("+ recommendedModeOfTransport.getModeName()+") you intend to use emits the least greenhouse gases.");
+                        System.out.println("Well done! The mode of transport("+ recommendedModeOfTransport.getTransportMode()+") you intend to use emits the least greenhouse gases.");
                     }
 
                 } 
@@ -258,9 +258,9 @@ public class FootprintTracker {
         {
             recommendedModeOfTransport=train.findLowestEmitter(ship, airplane, distance);
 
-            if (recommendedModeOfTransport.getModeName().equalsIgnoreCase(modeName))
+            if (recommendedModeOfTransport.getTransportMode().equalsIgnoreCase(modeName))
             {
-                System.out.println("Well done! The mode of transport("+ recommendedModeOfTransport.getModeName()+") you intend to use emits the lease greenhouse gases.");
+                System.out.println("Well done! The mode of transport("+ recommendedModeOfTransport.getTransportMode()+") you intend to use emits the lease greenhouse gases.");
             }
             else{
                 if (intendedModeOfTransport != null ) {
@@ -270,12 +270,12 @@ public class FootprintTracker {
                         recommendedEmissionsList.add(recommendedModeOfTransport.computeEmission(distance));
                         percentageOfEmissionsSaved= Math.round(Math.abs(((intendedModeOfTransport.computeEmission(distance)-recommendedModeOfTransport.computeEmission(distance))/intendedModeOfTransport.computeEmission(distance))*100));
             
-                        System.out.println("The mode of transport we recommend you use is "+ recommendedModeOfTransport.getModeName());
-                        System.out.println("With this mode of transport "+recommendedModeOfTransport.getModeName()+", you will reduce carbon emissions by " +percentageOfEmissionsSaved + " %");
+                        System.out.println("The mode of transport we recommend you use is "+ recommendedModeOfTransport.getTransportMode());
+                        System.out.println("With this mode of transport "+recommendedModeOfTransport.getTransportMode()+", you will reduce carbon emissions by " +percentageOfEmissionsSaved + " %");
     
                     }
                     else{
-                        System.out.println("Well done! The mode of transport(" + recommendedModeOfTransport.getModeName()+") you intend to use emits the least greenhouse gases.");
+                        System.out.println("Well done! The mode of transport(" + recommendedModeOfTransport.getTransportMode()+") you intend to use emits the least greenhouse gases.");
                     }
                 } 
                 else {

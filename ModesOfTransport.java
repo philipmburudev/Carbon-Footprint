@@ -3,7 +3,7 @@ import java.lang.Math;
 
 //declaring the class ModesOfTransport and its instance variables
 public class ModesOfTransport{
-    protected String modeName;
+    protected String transportMode;
     protected double emissionPerMile;
     protected double maxDistanceCovered;
     protected double minDistanceCovered;
@@ -12,20 +12,22 @@ public class ModesOfTransport{
     //constructor to initialize the variables
     public ModesOfTransport(String modeName, double emissionPerMile,double minDistanceCovered,double maxDistanceCovered)
     {
-        this.modeName=modeName;
+
+        this.transportMode=transportMode;
         this.emissionPerMile=emissionPerMile;
         this.maxDistanceCovered=maxDistanceCovered;
         this.minDistanceCovered=minDistanceCovered;
     }
 
     //method to get the mode name
-    public String getModeName() {
-        return modeName;
+    public String getTransportMode() {
+        return transportMode;
+        
     }
 
     //method to set the mode name
     public void setModeName(String modeName) {
-        this.modeName = modeName;
+        this.transportMode = modeName;
     }
 
     //method to get the emission per mile
