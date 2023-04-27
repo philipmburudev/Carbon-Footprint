@@ -21,7 +21,7 @@ import java.util.ArrayList;
  * @throws FileNotFoundException
  * @throws IOException
  */
-
+// Github link: https://github.com/philipmburudev/Carbon-Footprint
 public class FootprintTracker {
     static final int MAXIMUMUM_NUMBER_OF_LOCATIONS=20;
       
@@ -122,12 +122,7 @@ public class FootprintTracker {
                 System.out.println("Invalid input! Please enter a valid location.");
                 origin = userInput.nextLine();
             }
-            for(int i=0;i<locationName.length;i++){
-                while(!origin.equals(locationName[i])){
-                    System.out.println("This is not in the list of locations.\nEnter another origin");
-                    origin = userInput.nextLine();
-                }
-            }
+        
         } while (origin.matches("\\d+"));
         System.out.println();
     
@@ -144,12 +139,7 @@ public class FootprintTracker {
                 System.out.println("Invalid input! Please enter a valid location.");
                 destination = userInput2.nextLine();
             }
-            for(int i=0;i<locationName.length;i++){
-                while(!destination.equals(locationName[i])){
-                    System.out.println("This is not in the list of locations.\nEnter another destination");
-                    destination = userInput2.nextLine();
-                }
-            }
+            
         } while (destination.matches("\\d+"));
         System.out.println();
             
