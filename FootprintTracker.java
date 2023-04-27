@@ -21,7 +21,7 @@ import java.util.ArrayList;
  * @throws FileNotFoundException
  * @throws IOException
  */
-
+// Github link: https://github.com/philipmburudev/Carbon-Footprint
 public class FootprintTracker {
     static final int MAXIMUMUM_NUMBER_OF_LOCATIONS=20;
       
