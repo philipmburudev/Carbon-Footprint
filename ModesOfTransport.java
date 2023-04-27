@@ -9,7 +9,7 @@ public class ModesOfTransport{
   
 
     //constructor to initialize the variables
-    public ModesOfTransport(String modeName, double emissionPerMile,double minDistanceCovered,double maxDistanceCovered)
+    public ModesOfTransport(String transportMode, double emissionPerMile,double minDistanceCovered,double maxDistanceCovered)
     {
 
         this.transportMode=transportMode;
@@ -25,8 +25,8 @@ public class ModesOfTransport{
     }
 
     //method to set the mode name
-    public void setModeName(String modeName) {
-        this.transportMode = modeName;
+    public void setTransportMode(String transportMode) {
+        this.transportMode = transportMode;
     }
 
     //method to get the emission per mile
