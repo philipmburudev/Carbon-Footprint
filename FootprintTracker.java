@@ -98,6 +98,7 @@ public class FootprintTracker {
                                                                        + airplane.getTransportMode()
                                                                        );
         System.out.println();
+        System.out.println("---------------------------------------------------------------------------------");
 
         //asking user to enter their origin location
         String origin;
@@ -143,11 +144,9 @@ public class FootprintTracker {
 
         } while (modeName.matches("\\d+"));
         System.out.println();
+        System.out.println("---------------------------------------------------------------------------------");
 
-
-
-
-        // Finding the distance between two locations using their longitudes and latitudes
+        // finding the distance between two locations using their longitudes and latitudes
         double longitude1,longitude2,latitude1,latitude2,c,a;
         double distance=0;
         for(int i=0;i<locationName.length;i++)
@@ -168,16 +167,19 @@ public class FootprintTracker {
         }
         System.out.println();
 
+        // declaring two ModesOfTransport objects to store the user's intended and recommended modes of transport
         ModesOfTransport recommendedModeOfTransport;
         ModesOfTransport intendedModeOfTransport;
 
+        // variable to store the percentage of emissions saved by taking the recommended mode of transport
         double percentageOfEmissionsSaved=0;
 
+        // lists to store the actual and recommended emissions values
         List<Double> actualEmissionsList = new ArrayList<Double>();
         List<Double> recommendedEmissionsList = new ArrayList<Double>();
 
 
-
+        // checking the user's input mode name and setting the intended mode of transport accordingly
         if (modeName.equalsIgnoreCase("bicycle"))
         {
             intendedModeOfTransport=bicycle;
@@ -216,17 +218,22 @@ public class FootprintTracker {
         }
         else
         {
+            // if the mode name is not valid, setting the intended mode of transport to null
             intendedModeOfTransport=null;
         }
 
+        // determine the recommended mode of transport based on the distance and emissions of available modes
         if (distance>0 && distance<=5)
         {
+            // find the lowest emitter of greenhouse gases for short distances
             recommendedModeOfTransport=walking.findLowestEmitter(scooter, bicycle, distance);
-
+            
+            // check if the intended mode of transport is the same as the recommended mode
             if (recommendedModeOfTransport.getTransportMode().equalsIgnoreCase(modeName)){
                 System.out.println("Well done! The mode of transport("+ recommendedModeOfTransport.getTransportMode()+") you intend to use emits the least greenhouse gases.");
             }else
             {
+                    // calculate the percentage of emissions saved and add the actual and recommended emissions to their respective lists
                     percentageOfEmissionsSaved= 100;
                     actualEmissionsList.add(intendedModeOfTransport.computeEmission(distance));
                     recommendedEmissionsList.add(recommendedModeOfTransport.computeEmission(distance));
@@ -237,13 +244,16 @@ public class FootprintTracker {
             }
         }else if (distance>5 && distance<=200)
         {
+            // find the lowest emitter of greenhouse gases for medium distances
             recommendedModeOfTransport=motorbike.findLowestEmitter(car, bus, distance);
 
+            // check if the intended mode of transport is the same as the recommended mode
             if (recommendedModeOfTransport.getTransportMode().equalsIgnoreCase(modeName))
             {
                 System.out.println("Well done! The mode of transport("+ recommendedModeOfTransport.getTransportMode()+") you intend to use emits the lease greenhouse gases.");
             }
             else{
+                // calculate the percentage of emissions saved and add the actual and recommended emissions to their respective lists
                 if (intendedModeOfTransport != null) 
                 {
                     if(intendedModeOfTransport.computeEmission(distance)>0)
@@ -266,15 +276,17 @@ public class FootprintTracker {
             }       
             
         }
+        // find the lowest emitter of greenhouse gases for long distances
         else if (distance>200 && distance<=1250)
         {
             recommendedModeOfTransport=train.findLowestEmitter(ship, airplane, distance);
-
+            // check if the intended mode of transport is the same as the recommended mode
             if (recommendedModeOfTransport.getTransportMode().equalsIgnoreCase(modeName))
             {
                 System.out.println("Well done! The mode of transport("+ recommendedModeOfTransport.getTransportMode()+") you intend to use emits the lease greenhouse gases.");
             }
             else{
+                // calculate the percentage of emissions saved and add the actual and recommended emissions to their respective lists
                 if (intendedModeOfTransport != null ) {
                     if(intendedModeOfTransport.computeEmission(distance)>0)
                     {
@@ -301,13 +313,17 @@ public class FootprintTracker {
 
         System.out.println();
         for (int i = 0; i < actualEmissionsList.size(); i++) {
+        // looping through the actualEmissionsList to calculate the total actual emissions
             totalActualEmissions+=actualEmissionsList.get(i);
-
+        
+        // looping through the recommendedEmissionsList to calculate the total recommended emissions
             totalRecommendedEmissions+=recommendedEmissionsList.get(i);
         } 
-
+        System.out.println("---------------------------------------------------------------------------------");
         System.out.println("This is the end for this set\nOn to the next");
         System.out.println("Do you want to start again for another day?\nYes or No");
+        System.out.println("---------------------------------------------------------------------------------");
+
         startAgain = userInput4.nextLine();
         while(!startAgain.equalsIgnoreCase("Yes") && !startAgain.equalsIgnoreCase("No")){
             System.out.println("Your answer is not valid. Answer again");
@@ -324,15 +340,11 @@ public class FootprintTracker {
         userInput3.close();
         userInput4.close();
 
-
-
-
-        
-
-        
+        System.out.println("---------------------------------------------------------------------------------");
         System.out.println("\n" + "Actual emmission: " + totalActualEmissions + "\nEmmission with recommended mode: " + totalRecommendedEmissions);
         System.out.println();
-        //System.out.println("The total amount of emissions saved is: " + (totalActualEmissions - totalRecommendedEmissions) + " kg of CO2");
+        System.out.println("The total amount of emissions saved is: " + (totalActualEmissions - totalRecommendedEmissions) + " kg of CO2");
+        System.out.println("You have saved of " + Math.round(Math.abs(((totalActualEmissions-totalRecommendedEmissions)/totalActualEmissions)*100)) + "% of CO2");
         
     
     }
